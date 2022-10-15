@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codigo Compiler</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="header"> Codigo Compiler </div>
+    <div class="bar">
+        <div class="button-container">
+            <button class="btn" onclick="executeCode()"> Run &gt; </button>
+        </div>
+    <div class="control-panel">
+        Select Language:
+        &nbsp; &nbsp;
+        <select id="languages" class="languages" onchange="changeLanguage()">
+            <option value="c"> C </option>
+            <option value="cpp"> C++ </option>
+            <option value="python"> Python </option>
+            <option value="node"> Node JS </option>
+        </select>
+    </div>
+    <div class="control-panel">
+        Mode:
+        &nbsp; &nbsp;
+        <select id="mode" class="mode" onchange="changeMode()">
+            <option value="monokai"> Monokai </option>
+            <option value="tomorrow"> tomorrow </option>
+            <option value="solarized_light"> solarized_light </option>
+            <option value="solarized_dark"> solarized_dark </option>
+        </select>
+    </div>
+    
+</div>
+        <div class="editor" id="editor"></div>
+        <label for="" style="font-size: 25px; margin: 0 45vw;"><b>Terminal</b></label>
+        <div class="output"></div>
+        
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/ace.js"></script>
+    <script src="js/lib/theme-monokai.js"></script>
+    <script src="js/ide.js"></script>
+
+</body>
+</html>
