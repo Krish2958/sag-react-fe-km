@@ -1,8 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./pages";
-import "./app.css";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './pages';
+import './app.css';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
@@ -12,6 +13,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
