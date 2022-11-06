@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: codigo-frontend
+    image: codigo-react
+    build:
+      context: .
+    ports:
+      - 8000:80
