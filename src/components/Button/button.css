@@ -9,7 +9,13 @@
   background-color: var(--color-primary);
   color: white;
 }
+.sag-button--primary:hover {
+  background-color: var(--color-primary-light) !important;
+  color: white !important;
+}
 .sag-button--primary:active {
+  background-color: var(--color-primary-light) !important;
+  color: white !important;
   filter: none;
 }
 

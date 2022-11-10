@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../components/Button';
 import './home.css';
 
 export const Home = () => {
@@ -7,7 +6,6 @@ export const Home = () => {
     <div className="home">
       {/* Header Section */}
       <header className="home-header"></header>
-      <Button variant="primary">Home Text Club</Button>
       {/* Club Section */}
       {/* Footer Section */}
     </div>
