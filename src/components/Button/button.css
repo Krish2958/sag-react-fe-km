@@ -1,0 +1,28 @@
+
+.sag-button--primary, .sag-button--secondary {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  border-radius: 6px;
+}
+
+.sag-button--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.sag-button--primary:active {
+  filter: none;
+}
+
+.sag-button--secondary {
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-button--secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+.sag-button--secondary:active {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-primary) !important;
+  filter: none;
+}

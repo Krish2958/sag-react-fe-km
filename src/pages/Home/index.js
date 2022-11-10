@@ -1,14 +1,15 @@
 import React from 'react';
+import Button from '../../components/Button';
 import './home.css';
 
 export const Home = () => {
   return (
     <div className="home">
-      <header className="home-header">
-        {/* Header Section */}
-        {/* Club Section */}
-        {/* Footer Section */}
-      </header>
+      {/* Header Section */}
+      <header className="home-header"></header>
+      <Button variant="primary">Home Text Club</Button>
+      {/* Club Section */}
+      {/* Footer Section */}
     </div>
   );
 };
