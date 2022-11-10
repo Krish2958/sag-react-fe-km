@@ -66,6 +66,7 @@
     "build": "NODE_ENV=production && node scripts/build.js",
     "test": "NODE_ENV=test && node scripts/test.js",
     "lint": "eslint \"src/**/*.{ts,tsx,js}\" --fix --ignore-path .gitignore --max-warnings=0",
+    "lint-test": "eslint \"src/**/*.{ts,tsx,js}\" --ignore-path .gitignore --max-warnings=0",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx|json|js)\" --staged"
   },
   "eslintConfig": {

@@ -15,5 +15,5 @@ jobs:
           npm install --silent
       - name: Run lint test
         run: |
-          npm run lint
+          npm run lint-test
       - run: echo "🍏 This job's status is ${{ job.status }}."

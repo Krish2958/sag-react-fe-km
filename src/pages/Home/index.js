@@ -7,7 +7,9 @@ export const Home = () => {
     <div className="home">
       {/* Header Section */}
       <header className="home-header"></header>
-      <Button variant="primary">Home Text Club</Button>
+      <Button variant="primary">
+        Home Text Club
+      </Button>
       {/* Club Section */}
       {/* Footer Section */}
     </div>
