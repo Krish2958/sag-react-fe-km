@@ -4,7 +4,10 @@ import './home.css';
 export const Home = () => {
   return (
     <div className="home">
-      <header className="home-header">Header</header>
+      {/* Header Section */}
+      <header className="home-header"></header>
+      {/* Club Section */}
+      {/* Footer Section */}
     </div>
   );
 };
