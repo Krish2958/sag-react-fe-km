@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <div className="home">
       {/* Header Section */}
-      <header className="home-header"></header>
+      <header>SAG Web App started successfully!</header>
       {/* Club Section */}
       {/* Footer Section */}
     </div>
