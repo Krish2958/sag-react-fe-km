@@ -27,3 +27,7 @@ If not, please update `npm` and `node`.
    ```
    npm run start
    ```
+### Add main repositor as `upstream`
+```
+git remote add upstream https://github.com/SAG-Web-Devs/sag-react-fe.git
+```
