@@ -1,3 +1,12 @@
+.Logo {
+  position: absolute;
+  width: 301px;
+  height: 265px;
+  left: 133px;
+  top: 167px;
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+
 .app {
   text-align: center;
 }
