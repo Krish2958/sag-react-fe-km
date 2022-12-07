@@ -4,7 +4,7 @@ import Badge from 'react-bootstrap/Badge';
 import './Pill.css';
 const Pill = ({ children, variant = 'primary' }) => {
   return (
-    <Badge pill bg={variant} className="app-pill">
+    <Badge pill bg={variant} className="pill-padding">
       {children}
     </Badge>
   );
