@@ -1,8 +1,5 @@
 .logo-shadow{
-    position: absolute;
-    width: 301px;
-    height: 265px;
-    left: 133px;
-    top: 167px;
+    width: 18.813rem;
+    height: 16.563rem;
     filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
   }
