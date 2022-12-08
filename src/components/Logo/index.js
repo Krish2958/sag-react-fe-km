@@ -2,13 +2,13 @@ import React from 'react';
 import PropType from 'prop-types';
 import './Logo.css';
 
-const Logo = ({ image }) => {
+const Logo = ({ logo }) => {
   let className = 'logo-shadow';
-  return <div className={className}>{image}</div>;
+  return <div className={className}>{logo}</div>;
 };
 
 Logo.propTypes = {
-  image: PropType.element,
+  logo: PropType.element,
 };
 
 export default Logo;
