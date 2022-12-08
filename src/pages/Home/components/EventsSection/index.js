@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EventsSection = () => {
-  return <div></div>;
+  return <div>Events Section</div>;
 };
 
 export default EventsSection;
