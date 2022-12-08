@@ -2,8 +2,8 @@ version: "3.8"
 
 services:
   app:
-    container_name: codigo-frontend
-    image: codigo-react
+    container_name: sag-web-app-frontend
+    image: sag-react
     build:
       context: .
     ports:
