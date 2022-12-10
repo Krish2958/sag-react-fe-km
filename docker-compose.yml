@@ -8,3 +8,4 @@ services:
       context: .
     ports:
       - 8000:8181
+    command: ["nginx", "-g", "daemon off;"]
