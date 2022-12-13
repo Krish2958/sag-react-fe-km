@@ -1,0 +1,170 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  color: #10182f;
+}
+.container {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 831px;
+  height: 267px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+
+  
+}
+
+
+.eventname{
+position: absolute;
+left: 45.37%;
+
+top: 11.24%;
+bottom: 74.53%;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+/* identical to box height */
+
+
+/* Primary SAG */
+
+color: #0C3B5B;
+
+
+}
+
+
+.img{
+  width: 317px;
+  height: 212px;
+  position: absolute;
+left: 3.85%;
+right: 58%;
+top: 11.24%;
+bottom: 9.36%;
+
+filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
+border-radius: 10px;
+}
+.pilltag-p{
+    position: absolute;
+    height: 24px;
+    left: 45%;
+    top: calc(50% - 24px/2 - 53.5px);
+   
+}
+.pilltag-s{
+    position: absolute;
+    height: 24px;
+    left: 55%;
+    
+    top: calc(50% - 24px/2 - 53.5px);
+    
+}
+.buttonp{
+    position: absolute;
+left: 44.77%;
+right: 29.96%;
+top: 73.41%;
+bottom: 9.36%;
+
+}
+.buttons{
+ position: absolute;
+left: 73.04%;
+right: 6.02%;
+top: 73.41%;
+bottom: 9.36%;
+
+}
+.clubicon{
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: 377px;
+  top: 122px;
+  background: #ffffff;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
+}
+.clubname{
+  position: absolute;
+  left: 431px;
+  top: 130px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #0C3B5B;
+  
+    width: 174px;
+    height: 28px;
+
+}
+.button{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 20px 75px;
+gap: 10px;
+
+position: absolute;
+width: 831px;
+height: 70px;
+left: 230px;
+top: 620px;
+
+/* Button-text-large */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 30px;
+/* identical to box height, or 94% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Primary SAG */
+
+color: #0C3B5B;
+/* Primary White SAG */
+
+box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
