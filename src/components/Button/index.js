@@ -2,9 +2,18 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { Button as BootstrapButton } from 'react-bootstrap';
-import './button.css';
+import './Button.css';
 
-const Button = ({ variant = 'primary', className = '', children }) => {
+export const ButtonVariant = {
+  Primary: 'primary',
+  Secondary: 'secondary',
+};
+
+const Button = ({
+  variant = ButtonVariant.Primary,
+  className = '',
+  children,
+}) => {
   const classNames = [`sag-button--${variant}`, className];
 
   return (
@@ -15,7 +24,7 @@ const Button = ({ variant = 'primary', className = '', children }) => {
 };
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
