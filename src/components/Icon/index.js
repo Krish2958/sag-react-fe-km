@@ -34,7 +34,7 @@ const Icon = ({
 
 Icon.propTypes = {
   className: PropType.string,
-  iconIdentifier: PropType.string,
+  iconIdentifier: PropType.oneOf(Object.values(IconIdentifier)),
   srcImage: PropType.element,
   isEnlarged: PropType.bool,
   iconSize: PropType.number,
