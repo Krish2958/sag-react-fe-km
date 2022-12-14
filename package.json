@@ -70,12 +70,6 @@
     "lint-test": "eslint \"src/**/*.{ts,tsx,js}\" --ignore-path .gitignore --max-warnings=0",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx|json|js)\" --staged"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

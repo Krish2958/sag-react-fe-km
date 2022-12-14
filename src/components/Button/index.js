@@ -10,6 +10,7 @@ export const ButtonVariant = {
 };
 
 const Button = ({
+  onClick,
   variant = ButtonVariant.Primary,
   className = '',
   children,
@@ -17,13 +18,18 @@ const Button = ({
   const classNames = [`sag-button--${variant}`, className];
 
   return (
-    <BootstrapButton variant="primary" className={classNames.join(' ')}>
+    <BootstrapButton
+      variant="primary"
+      className={classNames.join(' ')}
+      onClick={onClick}
+    >
       {Children.toArray(children)}
     </BootstrapButton>
   );
 };
 
 Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,

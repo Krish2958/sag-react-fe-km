@@ -8,7 +8,7 @@ import { isUndefined } from 'lodash';
 
 const Icon = ({
   iconIdentifier,
-  srcImage,
+  imageSource,
   className = '',
   isEnlarged = false,
   iconSize = 18,
@@ -19,9 +19,11 @@ const Icon = ({
     iconClassName = `enlarged-${iconClassName}`;
   }
 
-  if (!isUndefined(srcImage)) {
+  if (!isUndefined(imageSource)) {
     return (
-      <div className={[iconClassName, className].join(' ')}>{srcImage}</div>
+      <div className={[iconClassName, className].join(' ')}>
+        <img src={imageSource} />
+      </div>
     );
   }
 
@@ -35,7 +37,7 @@ const Icon = ({
 Icon.propTypes = {
   className: PropType.string,
   iconIdentifier: PropType.oneOf(Object.values(IconIdentifier)),
-  srcImage: PropType.element,
+  imageSource: PropType.string,
   isEnlarged: PropType.bool,
   iconSize: PropType.number,
 };

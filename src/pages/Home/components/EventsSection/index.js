@@ -1,38 +1,69 @@
 import React from 'react';
-import { default as EventCard } from './EventCard';
-import { Button } from '../../../../components';
-import './EventCard.css';
-import image from './art_craft-club-logo-removebg-preview 1.png';
-import image1 from './publication-club-logo6 1.png';
+import EventCard from './EventCard';
+import { Button, LogoIdentifier, PillVariant } from '../../../../components';
+
+const initialEventsData = [
+  {
+    title: 'Doodle Art, Painting & Sketching Competition',
+    posterSource:
+      'https://t2.gstatic.com/images?q=tbn:ANd9GcRwAVGd70RjVWBB8igTst56Yr8bhUK9ubxAQkvyAxahyGpnm-dW',
+    pills: [
+      {
+        text: 'Art',
+        variant: PillVariant.Warning,
+        color: '#123344',
+      },
+      {
+        text: 'Competition',
+        variant: PillVariant.Danger,
+        color: '#435CA7',
+      },
+    ],
+    clubLogoSource: LogoIdentifier.ArtAndCraftClub,
+    clubName: 'Art & Craft Club',
+    onClickRegister: () => {
+      console.log('Register for Salvador Dali.');
+    },
+    onClickViewDetails: () => {
+      console.log('View details of Salvador Dali');
+    },
+  },
+  {
+    title: 'Article Writing Competition',
+    posterSource:
+      'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8qCc9Ck-zGDax-BhTtIEXP9QEziOmrKpCLVU-_QdLN6ET98G4',
+    pills: [
+      {
+        text: 'Writing',
+        variant: PillVariant.Info,
+        color: '#123344',
+      },
+      {
+        text: 'Competition',
+        variant: PillVariant.Danger,
+        color: '#435CA7',
+      },
+    ],
+    clubLogoSource: LogoIdentifier.PublicationClub,
+    clubName: 'Publication Club',
+    onClickRegister: () => {
+      console.log('Register for Article Writing Competition.');
+    },
+    onClickViewDetails: () => {
+      console.log('View details of Article Writing Competition');
+    },
+  },
+];
+
 const EventsSection = () => {
+  // const [eventsData, setEventsData] = useState(initialEventsData);
+
   return (
     <div>
-      <EventCard
-        clubname={'Art & Craft Club'}
-        clublogo={<img src={image} />}
-        pilltext_1={'Art  '}
-        pilltext_2={'Competition'}
-        pillvariant_1={'warning'}
-        pillvariant_2={'danger'}
-        eventposterURL={
-          'https://t2.gstatic.com/images?q=tbn:ANd9GcRwAVGd70RjVWBB8igTst56Yr8bhUK9ubxAQkvyAxahyGpnm-dW'
-        }
-      >
-        Salvador Dali
-      </EventCard>
-      <EventCard
-        clubname={'Publication Club'}
-        clublogo={<img src={image1} />}
-        pilltext_1={'Writing'}
-        pilltext_2={'Competition'}
-        pillvariant_1={'info'}
-        pillvariant_2={'danger'}
-        eventposterURL={
-          'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8qCc9Ck-zGDax-BhTtIEXP9QEziOmrKpCLVU-_QdLN6ET98G4'
-        }
-      >
-        Article Writing Competition
-      </EventCard>
+      {initialEventsData.map((eventData, index) => (
+        <EventCard key={eventData.title + index} {...eventData} />
+      ))}
+
       <Button className="button" variant="secondary">
         View all Events
       </Button>
