@@ -19,7 +19,8 @@ export const Home = () => {
         <br />
         <div>
           <GoogleLogin
-            useOneTap="True"
+            // hosted_domain=""
+            ux_mode="popup"
             onSuccess={responseMessage}
             onError={errorMessage}
           />

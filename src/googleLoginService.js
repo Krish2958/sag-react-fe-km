@@ -2,7 +2,7 @@ import axios from "axios";
 
 const googleLogin = async (accesstoken) => {
     let res = await axios.post(
-      "http://localhost:8000/api/v1/auth/login/google/",
+      "http://localhost:8000/auth/login/google/",
       {
         access_token: accesstoken,
       }
