@@ -1,5 +1,5 @@
-import { TokenManger } from './token-manager';
+import { TokenManager } from './token-manager';
 
 export const isAuthenticated = () => {
-  return !!TokenManger.getToken();
+  return !!TokenManager.getToken();
 };
