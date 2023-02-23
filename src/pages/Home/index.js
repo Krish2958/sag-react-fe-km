@@ -1,16 +1,15 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './home.css';
 
 export const Home = () => {
   return (
     <div className="home">
-      {/* Header Section */}
-      <header>SAG Web App started successfully!</header>
+      {/* Profile Button Components */}
 
-      {/* Upcoming Events Section */}
+      {/* Navigation Panel Component */}
 
-      {/* Club Section */}
-      {/* Footer Section */}
+      <Outlet />
     </div>
   );
 };
