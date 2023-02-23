@@ -1,5 +1,4 @@
 import React from 'react';
-import { EventsSection } from './components';
 import './home.css';
 
 export const Home = () => {
