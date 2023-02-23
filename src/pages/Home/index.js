@@ -1,5 +1,4 @@
 import React from 'react';
-import { EventsSection } from './components';
 import './home.css';
 
 export const Home = () => {
@@ -9,7 +8,6 @@ export const Home = () => {
       <header>SAG Web App started successfully!</header>
 
       {/* Upcoming Events Section */}
-      <EventsSection />
 
       {/* Club Section */}
       {/* Footer Section */}

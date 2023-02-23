@@ -31,11 +31,13 @@
   opacity: 1;
 }
 
-.icon-container {
+.carousel-control-next > .icon-container,
+  .carousel-control-prev > .icon-container {
   width: 1.8rem;
   height: 1.8rem;
 }
-.icon-container:hover {
+.carousel-control-next > .icon-container:hover,
+  .carousel-control-prev > .icon-container:hover {
   background-color: var(--color-secondary);
 }
 
