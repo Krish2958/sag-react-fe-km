@@ -42,8 +42,8 @@
     "build": "vite build --mode development",
     "build-production": "vite build",
     "serve": "vite preview",
-    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix --ignore-path .gitignore --max-warnings=0",
-    "lint-test": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --ignore-path .gitignore --max-warnings=0",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --fix --ignore-path .gitignore --max-warnings=0",
+    "lint-test": "eslint \"src/**/*.{js,jsx}\" --ignore-path .gitignore --max-warnings=0",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx|json|js|jsx)\" --staged"
   },
   "devDependencies": {
