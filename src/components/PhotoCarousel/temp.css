@@ -1,0 +1,9 @@
+.carousel-item-gradient {
+  background: radial-gradient(52.08% 50% at 16.96% 100%, var(--color-primary) 0%, rgba(12, 59, 91, 0) 100%);
+}
+
+.carousel-item-gradient > img {
+  position:relative;
+  z-index:-1 !important;
+}
+

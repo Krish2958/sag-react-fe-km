@@ -27,7 +27,9 @@ Ensure that:
    ```
    npx husky install
    ```
-3. Run the app.
+3. Copy the contents of the sample environment variable file(.env.sample) file 
+present in `config` folder to a new file `.env.development.local` in the same folder.z
+4. Run the app.
    ```
    npm run start
    ```
@@ -37,3 +39,14 @@ Ensure that:
 ```
 git remote add upstream https://github.com/SAG-Web-Devs/sag-react-fe.git
 ```
+
+### Raising a Pull Request
+To push any changes regarding a task assigned in JIRA follow the following steps:
+
+Create a branch from development branch in the following format:\
+`JIRA-ID-task-description` (eg. `SWA-47-fix-lint-check-github-actions-not-working`)
+
+The PR title should also contain JIRA task id in the following format:
+`[JIRA-ID]` (eg. `[SWA-47]`)
+
+Please ensure you commits contain meaningful messages.
