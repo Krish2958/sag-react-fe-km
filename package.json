@@ -10,13 +10,9 @@
     "css-loader": "^6.5.1",
     "eslint-config-react-app": "^7.0.1",
     "file-loader": "^6.2.0",
-<<<<<<< HEAD
     "framer-motion": "^10.0.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
-=======
-    "fs-extra": "^10.0.0",
->>>>>>> development
     "icomoon-react": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.21",
