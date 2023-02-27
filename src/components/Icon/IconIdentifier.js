@@ -1,4 +1,17 @@
 export const IconIdentifier = {
+  About: 'about',
+  Clubs: 'clubs',
+  Event: 'event',
+  Sports: 'sports',
+  Subtract: 'subtract',
+  Call: 'call',
+  Check: 'check-icon',
+  Facebook: 'facebook',
+  Google: 'google',
+  LinkedIn: 'linkedin',
+  Mail: 'mail',
+  EyeHide: 'eye-hide',
+  Eye: 'eye',
   ChevronLeft: 'chevron-left',
   ChevronRight: 'chevron-right',
 };
