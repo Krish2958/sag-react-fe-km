@@ -28,7 +28,8 @@ Ensure that:
    npx husky install
    ```
 3. Copy the contents of the sample environment variable file(.env.sample) file 
-present in `config` folder to a new file `.env.development.local` in the same folder.z
+present in `config` folder to a new file `.env.development.local` in the same folder.
+
 4. Run the app.
    ```
    npm run start

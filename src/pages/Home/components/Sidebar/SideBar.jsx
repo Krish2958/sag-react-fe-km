@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import React from 'react';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { FaBars } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
 import SidebarMenu from './SidebarMenu';
+import PropType from 'prop-types';
+
 const routes = [
   {
     path: '/',
@@ -69,27 +70,27 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  Students Activity
+                  Student Activity
                 </motion.h1>
               )}
             </AnimatePresence>
 
             <div className="bars">
-              <i className="fa-solid fa-house" onClick={toggle} />
+              <FaBars onClick={toggle} />
             </div>
           </div>
           <section className="routes">
             {routes.map((route, index) => {
               if (route.subRoutes) {
                 return (
-                  <>
-                    <SidebarMenu
-                      setIsOpen={setIsOpen}
-                      route={route}
-                      showAnimation={showAnimation}
-                      isOpen={isOpen}
-                    />
-                  </>
+                  <SidebarMenu
+                    index={index}
+                    key={index}
+                    setIsOpen={setIsOpen}
+                    route={route}
+                    showAnimation={showAnimation}
+                    isOpen={isOpen}
+                  />
                 );
               }
 
@@ -98,7 +99,7 @@ const SideBar = ({ children }) => {
                   to={route.path}
                   key={index}
                   className="link"
-                  activeClassName="active"
+                  activeclassname="active"
                 >
                   <div className="icon">{route.icon}</div>
                   <AnimatePresence>
@@ -127,9 +128,7 @@ const SideBar = ({ children }) => {
 };
 
 SideBar.propTypes = {
-  route: PropTypes.func,
-  className: PropTypes.func,
-  children: PropTypes.func,
+  children: PropType.node.isRequired,
 };
 
 export default SideBar;
