@@ -1,14 +1,52 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import './home.css';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Button, ButtonVariant } from '../../components';
+import { PageWrapper } from './components';
+import { isAuthenticated } from '../../helpers';
+import './Home.css';
+import { Login } from '../Login';
 
 export const Home = () => {
+  // Hooks.
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handlers.
+  const onClickLoginHandler = () => {
+    navigate(Login.route);
+  };
+
+  // Renders.
+  const renderProfileButtons = () => {
+    if (location.pathname === Login.route) {
+      return;
+    }
+
+    if (!isAuthenticated()) {
+      return (
+        <Button
+          className="home-page-login-button"
+          variant={ButtonVariant.Secondary}
+          onClick={onClickLoginHandler}
+        >
+          Login
+        </Button>
+      );
+    }
+
+    // TODO: Show profile buttons if authenticated
+  };
+
   return (
     <div className="home">
-      You have successfully started the react app
       {/* Profile Button Components */}
+      {renderProfileButtons()}
       {/* Navigation Panel Component */}
-      <Outlet />
+      <PageWrapper>
+        <Outlet />
+      </PageWrapper>
     </div>
   );
 };
+
+Home.route = '/';

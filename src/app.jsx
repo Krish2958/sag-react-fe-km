@@ -3,17 +3,17 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './app.css';
 import { AuthRoute, ProtectedRoute, PublicRoute } from './helpers';
-import { Home, PageNotFound } from './pages';
+import { Home, Login, PageNotFound } from './pages';
 
 const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />}>
+          <Route exact path={Home.route} element={<Home />}>
             <Route element={<AuthRoute />}>
               {/* Login Route */}
-              {/* SignUp Route */}
+              <Route path={Login.route} element={<Login />} />
             </Route>
 
             <Route element={<PublicRoute />}>
@@ -25,8 +25,8 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="*" element={<Navigate to={'/not-found'} />} />
-          <Route path="/not-found" element={<PageNotFound />} />
+          <Route path="*" element={<Navigate to={PageNotFound.route} />} />
+          <Route path={PageNotFound.route} element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
