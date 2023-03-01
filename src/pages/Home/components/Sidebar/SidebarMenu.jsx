@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import PropType from 'prop-types';
 
 const menuAnimation = {
   hidden: {
@@ -75,7 +75,7 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
                   }
                 : { rotate: 0 }
             }
-          ></motion.div>
+          />
         )}
       </div>{' '}
       <AnimatePresence>
@@ -96,17 +96,18 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
               </motion.div>
             ))}
           </motion.div>
-        )}{' '}
+        )}
+        {''}
       </AnimatePresence>
     </>
   );
 };
 
 SidebarMenu.propTypes = {
-  route: PropType.func,
-  showAnimation: PropType.func,
-  isOpen: PropType.func,
-  setIsOpen: PropType.func,
+  route: PropTypes.func,
+  showAnimation: PropTypes.func,
+  isOpen: PropTypes.func,
+  setIsOpen: PropTypes.func,
 };
 
 export default SidebarMenu;

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './app.css';
-import './pages/Home/components/Sidebar/SideBar.css';
 import { AuthRoute, ProtectedRoute, PublicRoute } from './helpers';
 import { Home, PageNotFound } from './pages';
 import SideBar from './pages/Home/components/Sidebar';
