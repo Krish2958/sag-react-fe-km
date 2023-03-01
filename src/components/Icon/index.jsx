@@ -10,14 +10,9 @@ const Icon = ({
   iconIdentifier,
   imageSource,
   className = '',
-  isEnlarged = false,
   iconSize = 18,
 }) => {
   let iconClassName = 'icon-container';
-
-  if (isEnlarged) {
-    iconClassName = `enlarged-${iconClassName}`;
-  }
 
   if (!isUndefined(imageSource)) {
     return (

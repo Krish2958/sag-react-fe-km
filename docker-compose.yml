@@ -9,3 +9,5 @@ services:
     ports:
       - 8000:8181
     command: ["nginx", "-g", "daemon off;"]
+    env_file:
+      - "config/.env.development.local"

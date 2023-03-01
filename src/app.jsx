@@ -3,23 +3,25 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './app.css';
 import { AuthRoute, ProtectedRoute, PublicRoute } from './helpers';
-import { Home, PageNotFound } from './pages';
-import SideBar from './pages/Home/components/Sidebar';
-import About from './pages/Home/components/About/About';
-import Clubs from './pages/Home/components/Clubs/Clubs';
-import Sports from './pages/Home/components/Sports/Sports';
-import Events from './pages/Home/components/Events/Events';
+import {
+  Home,
+  Login,
+  PageNotFound,
+  Events,
+  About,
+  Clubs,
+  Sports,
+} from './pages';
 
 const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />}>
-            <SideBar />
+          <Route exact path={Home.route} element={<Home />}>
             <Route element={<AuthRoute />}>
               {/* Login Route */}
-              {/* SignUp Route */}
+              <Route path={Login.route} element={<Login />} />
             </Route>
 
             <Route element={<PublicRoute />}>
@@ -35,8 +37,8 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="*" element={<Navigate to={'/not-found'} />} />
-          <Route path="/not-found" element={<PageNotFound />} />
+          <Route path="*" element={<Navigate to={PageNotFound.route} />} />
+          <Route path={PageNotFound.route} element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

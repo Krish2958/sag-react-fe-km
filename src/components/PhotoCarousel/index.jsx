@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from 'react-bootstrap';
-import { Icon, IconIdentifier } from '../';
+import { Icon, IconIdentifier } from '..';
 import './PhotoCarousel.css';
 
 const PhotoCarousel = ({ containerClassName, interval = 2000, children }) => {
