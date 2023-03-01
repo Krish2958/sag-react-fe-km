@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '../../assets/images';
+import { Illustration } from '../../assets/images';
 import { Button, ButtonVariant, Icon, IconIdentifier } from '../../components';
 import './Login.css';
 
@@ -8,12 +8,12 @@ export const Login = () => {
     <div className="login-page">
       <div className="login-form-container">
         <h1 className="title">Get Started with SAG</h1>
-        <img className="illustration" src={Image.UserChilling} />
+        <img className="illustration" src={Illustration.UserChilling} />
         <Button className="login-form-button" variant={ButtonVariant.Secondary}>
           <Icon iconIdentifier={IconIdentifier.Google} /> Sign-in with Google
         </Button>
       </div>
-      <img className="illustration" src={Image.UserInDoubt} />
+      <img className="illustration" src={Illustration.UserInDoubt} />
     </div>
   );
 };
