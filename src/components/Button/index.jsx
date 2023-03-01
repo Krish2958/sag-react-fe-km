@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { Button as BootstrapButton } from 'react-bootstrap';

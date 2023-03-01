@@ -1,26 +1,11 @@
 .icon-container {
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  max-width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
-}
-
-.icon-container-enlarged {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  max-width: 3.9rem;
-  height: 3.9rem;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.25);
 }
-
-.icon-container>img, .icon-container-enlarged>img {
+.icon-container > img {
   width: 100%;
   height: auto;
   margin: auto;

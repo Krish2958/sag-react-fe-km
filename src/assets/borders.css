@@ -1,0 +1,5 @@
+:root {
+  /* Border Radius */
+  --page-border-radius: 24px;
+  --rounded-button-border-radius: 20px;
+}
