@@ -16,6 +16,7 @@ export const IconIdentifier = {
   Mail: 'mail',
   EyeHide: 'eye-hide',
   Eye: 'eye',
+  Bell: 'bell',
   ChevronLeft: 'chevron-left',
   ChevronRight: 'chevron-right',
 };
