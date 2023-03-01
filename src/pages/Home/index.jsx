@@ -9,7 +9,7 @@ import { Login } from '../Login';
 export const Home = () => {
   // Hooks.
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   // Handlers.
   const onClickLoginHandler = () => {
@@ -18,7 +18,7 @@ export const Home = () => {
 
   // Renders.
   const renderProfileButtons = () => {
-    if (location.pathname === Login.route) {
+    if (pathname === Login.route) {
       return;
     }
 
