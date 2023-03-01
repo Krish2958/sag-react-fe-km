@@ -1,0 +1,15 @@
+.title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.sub-text {
+  color: var(--color-black-400);
+  font-size: 0.75rem;
+}
+
+.hyperlink {
+  color: var(--color-hyperlink-blue);
+  text-decoration: none;
+}

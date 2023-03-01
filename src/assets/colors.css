@@ -1,5 +1,13 @@
 :root {
+  /* Theme colors */
   --color-primary: #0C3B5B;
   --color-primary-light: #2A648B;
   --color-secondary: #DCDCDC;
+  --color-main-background: #EDEDED;
+
+  /* Blacks */
+  --color-black-400: #A7A7A7;
+  
+  /* Custom */
+  --color-hyperlink-blue: #729AE8;
 }
