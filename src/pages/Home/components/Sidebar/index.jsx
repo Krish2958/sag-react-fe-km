@@ -47,7 +47,7 @@ const SideBar = ({ children }) => {
 
   return (
     <>
-      <div className="main-container">
+      <div className="main-container-sidebar">
         <motion.div
           animate={{
             width: isOpen ? '200px' : '45px',

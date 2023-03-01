@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Sports = () => {
+export const Sports = () => {
   return <div className="title"> Sports</div>;
 };
-
-export default Sports;
