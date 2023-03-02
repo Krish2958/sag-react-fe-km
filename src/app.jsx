@@ -3,7 +3,15 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './app.css';
 import { AuthRoute, ProtectedRoute, PublicRoute } from './helpers';
-import { Home, Login, PageNotFound } from './pages';
+import {
+  Home,
+  Login,
+  PageNotFound,
+  Events,
+  About,
+  Clubs,
+  Sports,
+} from './pages';
 
 const App = () => {
   return (
@@ -18,6 +26,10 @@ const App = () => {
 
             <Route element={<PublicRoute />}>
               {/* All Public Routes go here. */}
+              <Route path="/" element={<Events />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/sports" element={<Sports />} />
+              <Route path="/clubs" element={<Clubs />} />
             </Route>
 
             <Route element={<ProtectedRoute />}>
