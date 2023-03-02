@@ -1,0 +1,17 @@
+.bell-button {
+    padding: 0.5rem 0.5rem;
+    position: fixed;
+    top: 1rem;
+    right: 7rem;
+    border-radius: 50%;
+}
+
+.popover {
+    padding: 4rem 0;
+    height: 23.813rem;
+    width: 30.313rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
