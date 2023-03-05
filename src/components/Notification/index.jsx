@@ -5,7 +5,7 @@ import { Button, ButtonVariant, Icon, IconIdentifier } from '../../components';
 import { Illustration } from '../../assets/images';
 import './notification.css';
 
-export const Notification = () => {
+export const NotificationButton = () => {
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
 
@@ -14,29 +14,25 @@ export const Notification = () => {
     setTarget(event.target);
   };
 
-  const iconStyle = {
-    backgroundColor: show ? 'white' : '#DCDCDC',
-  };
-
   return (
     <div>
       <Button
-        style={iconStyle}
+        style={{ backgroundColor: show ? 'white' : '#DCDCDC' }}
         onClick={handleClick}
-        className="bell-button"
+        className="notification-bell-icon-button"
         variant={ButtonVariant.Secondary}
       >
-        <Icon iconIdentifier={IconIdentifier.Calendar} />
+        <Icon iconIdentifier={IconIdentifier.Bell} />
       </Button>
       <Overlay
-        className="popover"
+        className="notification-overlay"
         show={show}
         target={target}
         placement="bottom"
       >
-        <Popover id="popover-contained">
+        <Popover>
           <Popover.Body>
-            <img className="illustration" src={Illustration.UserChilling} />
+            <img className="illustration" src={Illustration.BellCrossed} />
             <p>
               <strong>No Notifications Yet.</strong>
             </p>

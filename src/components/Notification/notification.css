@@ -1,4 +1,4 @@
-.bell-button {
+.notification-bell-icon-button {
     padding: 0.5rem 0.5rem;
     position: fixed;
     top: 1rem;
@@ -6,7 +6,7 @@
     border-radius: 50%;
 }
 
-.popover {
+.notification-overlay {
     padding: 4rem 0;
     height: 23.813rem;
     width: 30.313rem;

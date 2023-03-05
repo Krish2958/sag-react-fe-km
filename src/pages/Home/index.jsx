@@ -5,7 +5,7 @@ import { PageWrapper } from './components';
 import { isAuthenticated } from '../../helpers';
 import './Home.css';
 import { Login } from '../Login';
-import { Notification } from '../../components/Notification';
+import { NotificationButton } from '../../components/Notification';
 
 export const Home = () => {
   // Hooks.
@@ -41,7 +41,7 @@ export const Home = () => {
   return (
     <div className="home">
       {/* Profile Button Components */}
-      <Notification />
+      <NotificationButton />
       {renderProfileButtons()}
       {/* Navigation Panel Component */}
       <PageWrapper>
