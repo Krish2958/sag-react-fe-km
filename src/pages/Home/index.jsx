@@ -1,11 +1,10 @@
 import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Button, ButtonVariant } from '../../components';
+import { Button, ButtonVariant, NotificationButton } from '../../components';
 import { PageWrapper } from './components';
 import { isAuthenticated } from '../../helpers';
 import './Home.css';
 import { Login } from '../Login';
-import { NotificationButton } from '../../components/Notification';
 
 export const Home = () => {
   // Hooks.

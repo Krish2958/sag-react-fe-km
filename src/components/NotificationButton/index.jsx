@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Overlay from 'react-bootstrap/Overlay';
-import Popover from 'react-bootstrap/Popover';
-import { Button, ButtonVariant, Icon, IconIdentifier } from '../../components';
+import { Overlay, Popover } from 'react-bootstrap';
+import { Button, ButtonVariant, Icon, IconIdentifier } from '..';
 import { Illustration } from '../../assets/images';
-import './notification.css';
+import './Notification.css';
 
-export const NotificationButton = () => {
+const NotificationButton = () => {
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
 
@@ -45,3 +44,5 @@ export const NotificationButton = () => {
     </div>
   );
 };
+
+export default NotificationButton;
