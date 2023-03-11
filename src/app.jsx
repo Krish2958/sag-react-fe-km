@@ -18,6 +18,10 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Routes>
+          {/* Navigate to Events page by default */}
+          <Route path="/" element={<Navigate to={Events.route} />} />
+
+          {/* Main Routes */}
           <Route exact path={Home.route} element={<Home />}>
             <Route element={<AuthRoute />}>
               {/* Login Route */}
@@ -26,10 +30,10 @@ const App = () => {
 
             <Route element={<PublicRoute />}>
               {/* All Public Routes go here. */}
-              <Route path="/" element={<Events />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/sports" element={<Sports />} />
-              <Route path="/clubs" element={<Clubs />} />
+              <Route path={Events.route} element={<Events />} />
+              <Route path={Clubs.route} element={<Clubs />} />
+              <Route path={Sports.route} element={<Sports />} />
+              <Route path={About.route} element={<About />} />
             </Route>
 
             <Route element={<ProtectedRoute />}>
