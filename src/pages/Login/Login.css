@@ -32,7 +32,8 @@
 }
 
 .login-form-container > .illustration {
-  width: 8rem;
+  width: 10rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 992px) {
