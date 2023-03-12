@@ -10,8 +10,7 @@ export const Login = () => {
     onSuccess: (codeResponse) => {},
     hosted_domain: "mlvti.ac.in",
     onError: () => {},
-  }
-  );
+  });
   return (
     <div className="login-page">
       <div className="login-form-container">
