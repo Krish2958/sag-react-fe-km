@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import { Illustration } from '../../assets/images';
-import { Button, ButtonVariant, Icon, IconIdentifier } from '../../components';
+import { EventBadge, Button, ButtonVariant, Icon, IconIdentifier } from '../../components';
 import './Login.css';
 
 
@@ -19,6 +19,10 @@ export const Login = () => {
         <Button className="login-form-button" variant={ButtonVariant.Secondary} onClick={() => googleSignInHandler()}>
           <Icon iconIdentifier={IconIdentifier.Google} /> Sign-in with Google
         </Button>
+        <EventBadge variant='warning' icon={IconIdentifier.Trophy}>Competition</EventBadge>
+        <EventBadge variant='success' icon={IconIdentifier.Tools}>Workshop</EventBadge>
+        <EventBadge variant='primary' icon={IconIdentifier.Keynote}>Seminar</EventBadge>
+        <EventBadge variant='danger' icon={IconIdentifier.Bulb}>Quizzes</EventBadge>
       </div>
       <img className="illustration" src={Illustration.UserInDoubt} />
     </div>
