@@ -7,4 +7,3 @@ export const EventBadgeVariant = {
   Info: 'info',
   Dark: 'dark',
 };
-
