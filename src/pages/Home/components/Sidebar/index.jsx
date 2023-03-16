@@ -1,135 +1,102 @@
-import { NavLink } from 'react-router-dom';
-import React from 'react';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { AnimatePresence, motion } from 'framer-motion';
-import SidebarMenu from './SidebarMenu';
-const routes = [
-  {
-    path: '/',
-    name: 'Events',
-  },
-  {
-    path: '/clubs',
-    name: 'Clubs',
-  },
-  {
-    path: '/sports',
-    name: 'Sports',
-  },
-  {
-    path: '/about',
-    name: 'About',
-  },
-];
+import React, { useState } from 'react';
+import { Sidebar as ProSidebar, Menu } from 'react-pro-sidebar';
+import {
+  Button,
+  ButtonVariant,
+  Colors,
+  Icon,
+  IconIdentifier,
+  Logo,
+  LogoIdentifier,
+} from '../../../../components';
+import { Events, Clubs, Sports, About } from '../../../../pages';
+import { menuItemsTitle, sidebarMenuStyles } from './constants';
+import { SidebarMenuItem } from './SidebarMenuItem';
+import './Sidebar.css';
 
-const SideBar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+export const SideBar = () => {
+  // States.
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
+  const [isCollapseButtonPressed, setIsCollapseButtonPressed] = useState(false);
 
-  const showAnimation = {
-    hidden: {
-      width: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
+  // Constants.
+  const menuItemsList = [
+    {
+      title: menuItemsTitle.Events,
+      iconIdentifier: IconIdentifier.Calendar,
+      route: Events.route,
     },
-    show: {
-      opacity: 1,
-      width: 'auto',
-      transition: {
-        duration: 0.5,
-      },
+    {
+      title: menuItemsTitle.Clubs,
+      iconIdentifier: IconIdentifier.Groups,
+      route: Clubs.route,
     },
+    {
+      title: menuItemsTitle.Sports,
+      iconIdentifier: IconIdentifier.Soccer,
+      route: Sports.route,
+    },
+    {
+      title: menuItemsTitle.About,
+      iconIdentifier: IconIdentifier.Info,
+      route: About.route,
+    },
+  ];
+
+  // Handlers.
+  const onPressEventCollapseButtonHandler = () => {
+    setIsCollapseButtonPressed((prev) => !prev);
   };
 
   return (
-    <>
-      <div className="main-container-sidebar">
-        <motion.div
-          animate={{
-            width: isOpen ? '200px' : '45px',
-
-            transition: {
-              duration: 0.5,
-              type: 'spring',
-              damping: 10,
-            },
-          }}
-          className={`sidebar `}
-        >
-          <div className="top_section">
-            <AnimatePresence>
-              {isOpen && (
-                <motion.h1
-                  variants={showAnimation}
-                  initial="hidden"
-                  animate="show"
-                  exit="hidden"
-                  className="logo"
-                >
-                  Students Activity
-                </motion.h1>
-              )}
-            </AnimatePresence>
-
-            <div className="bars">
-              <i className="fa-solid fa-house" onClick={toggle} />
-            </div>
-          </div>
-          <section className="routes">
-            {routes.map((route, index) => {
-              if (route.subRoutes) {
-                return (
-                  <>
-                    <SidebarMenu
-                      setIsOpen={setIsOpen}
-                      route={route}
-                      showAnimation={showAnimation}
-                      isOpen={isOpen}
-                    />
-                  </>
-                );
-              }
-
-              return (
-                <NavLink
-                  to={route.path}
-                  key={index}
-                  className="link"
-                  activeClassName="active"
-                >
-                  <div className="icon">{route.icon}</div>
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        variants={showAnimation}
-                        initial="hidden"
-                        animate="show"
-                        exit="hidden"
-                        className="link_text"
-                      >
-                        {route.name}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </NavLink>
-              );
-            })}
-          </section>
-        </motion.div>
-
-        <main>{children}</main>
-      </div>
-    </>
+    <ProSidebar
+      className="sag-sidebar"
+      defaultCollapsed={isSidebarCollapsed}
+      collapsedWidth="4rem"
+      backgroundColor={Colors.White}
+      rootStyles={sidebarMenuStyles.sidebar}
+    >
+      <Logo
+        className="sag-sidebar-logo-collapsed"
+        logoIdentifier={LogoIdentifier.SAG}
+      />
+      <Menu
+        menuItemStyles={{
+          button: ({ active }) =>
+            active
+              ? sidebarMenuStyles.menuItemButtonActive
+              : sidebarMenuStyles.menuItemButton,
+          icon: sidebarMenuStyles.menuButtonIcon,
+        }}
+      >
+        {menuItemsList.map((menuItem) => (
+          <SidebarMenuItem
+            key={menuItem.title}
+            title={menuItem.title}
+            navRoute={menuItem.route}
+            iconIdentifier={menuItem.iconIdentifier}
+            isActive={window.location.pathname === menuItem.route}
+          />
+        ))}
+      </Menu>
+      <Button
+        className="sag-sidebar-collapse-button"
+        variant={ButtonVariant.Secondary}
+        onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+        onMouseDown={onPressEventCollapseButtonHandler}
+        onMouseUp={onPressEventCollapseButtonHandler}
+      >
+        <Icon
+          className="sag-sidebar-collapse-button-icon"
+          iconIdentifier={
+            isSidebarCollapsed
+              ? IconIdentifier.ChevronRight
+              : IconIdentifier.ChevronLeft
+          }
+          color={isCollapseButtonPressed ? Colors.White : Colors.Primary}
+        />
+        {!isSidebarCollapsed && 'Collapsed'}
+      </Button>
+    </ProSidebar>
   );
 };
-
-SideBar.propTypes = {
-  route: PropTypes.func,
-  className: PropTypes.func,
-  children: PropTypes.func,
-};
-
-export default SideBar;

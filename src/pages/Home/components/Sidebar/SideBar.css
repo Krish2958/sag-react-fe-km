@@ -1,100 +1,43 @@
-.main-container-sidebar {
-  display: flex;
-}
-
-main {
-  padding: 10px;
-}
-
-.title {
-  font-size: 3rem;
-  display: grid;
-  place-items: center;
-}
-
-/* Sidebar */
-.sidebar {
-  background: rgb(0, 7, 61);
-  color: white;
+.sag-sidebar {
   height: 100vh;
-  overflow-y: auto;
 }
-
-.top_section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 10px;
-}
-
-.logo {
-  font-size: 18px;
-  line-height: 0;
-  color: yellowgreen;
-}
-
-.bars {
-  width: 30px;
-}
-
-.hide {
-  display: none;
-}
-
-.routes {
-  margin-top: 15px;
+.sag-sidebar > div {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: start;
 }
 
-.link {
+.sag-sidebar-logo-collapsed > img {
+  max-width: 100%;
+  padding: 2.1rem 0.6rem;
+}
+
+.sag-sidebar-collapse-button {
   display: flex;
-  color: white;
-  gap: 10px;
-  padding: 5px 10px;
-  border-right: 4px solid transparent;
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  justify-content: flex-start;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-top: auto;
+  margin: auto 0.4rem 0.8rem 0.4rem;
+  filter: none;
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:hover {
+  box-shadow: 0.2rem 0 0 -0.1rem rgba(12, 59, 91, 1);
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:active {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  filter: none;
+  box-shadow: none;
 }
 
-.link:hover {
-  border-right: 4px solid white;
-  background: rgb(45, 51, 89);
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+.sag-sidebar-collapse-button-icon {
+  padding: 0 0.4rem;
 }
-
-.active {
-  border-right: 4px solid white;
-  background: rgb(45, 51, 89);
-}
-
-.link_text {
-  white-space: nowrap;
-  font-size: 15px;
-  color: red;
-}
-
-.menu {
-  display: flex;
-  color: white;
-
-  padding: 5px 10px;
-  border-right: 4px solid transparent;
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  justify-content: space-between;
-}
-
-.menu_item {
-  display: flex;
-  gap: 10px;
-}
-
-.menu_container {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu_container .link {
-  padding-left: 20px;
-  border-bottom: #fff 0.5px solid;
+.sag-icon > svg {
+  fill: black;
 }
