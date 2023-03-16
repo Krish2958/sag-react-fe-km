@@ -48,18 +48,45 @@ export const SideBar = () => {
     setIsCollapseButtonPressed((prev) => !prev);
   };
 
+  // Renders.
+  const renderSagLogo = () => {
+    if (isSidebarCollapsed) {
+      return (
+        <Logo
+          className="sag-sidebar-logo-collapsed"
+          logoIdentifier={LogoIdentifier.SAG}
+        />
+      );
+    }
+    return (
+      <div className="sag-sidebar-logo-container">
+        <Logo
+          className="sag-sidebar-logo-uncollapsed"
+          logoIdentifier={LogoIdentifier.SAG}
+        />
+        <div className="sag-sidebar-logo-text-container">
+          <span className="sag-sidebar-logo-text">
+            Student&apos;s Activity Group
+          </span>
+          <span className="sag-sidebar-logo-subtext">[M.L.V.T.E.C.]</span>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <ProSidebar
       className="sag-sidebar"
       defaultCollapsed={isSidebarCollapsed}
       collapsedWidth="4rem"
+      width="14rem"
       backgroundColor={Colors.White}
       rootStyles={sidebarMenuStyles.sidebar}
     >
-      <Logo
-        className="sag-sidebar-logo-collapsed"
-        logoIdentifier={LogoIdentifier.SAG}
-      />
+      {/* Header Logo */}
+      {renderSagLogo()}
+
+      {/* Main Menu */}
       <Menu
         menuItemStyles={{
           button: ({ active }) =>
@@ -79,6 +106,8 @@ export const SideBar = () => {
           />
         ))}
       </Menu>
+
+      {/* Collapse Button */}
       <Button
         className="sag-sidebar-collapse-button"
         variant={ButtonVariant.Secondary}
