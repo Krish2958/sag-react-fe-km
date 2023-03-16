@@ -1,0 +1,43 @@
+.sag-sidebar {
+  height: 100vh;
+}
+.sag-sidebar > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sag-sidebar-logo-collapsed > img {
+  max-width: 100%;
+  padding: 2.1rem 0.6rem;
+}
+
+.sag-sidebar-collapse-button {
+  display: flex;
+  justify-content: flex-start;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-top: auto;
+  margin: auto 0.4rem 0.8rem 0.4rem;
+  filter: none;
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:hover {
+  box-shadow: 0.2rem 0 0 -0.1rem rgba(12, 59, 91, 1);
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:active {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  filter: none;
+  box-shadow: none;
+}
+
+.sag-sidebar-collapse-button-icon {
+  padding: 0 0.4rem;
+}
+.sag-icon > svg {
+  fill: black;
+}

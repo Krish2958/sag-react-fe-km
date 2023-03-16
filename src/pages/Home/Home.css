@@ -2,6 +2,7 @@
   overflow: hidden;
   position: relative;
   height: 100%;
+  display: flex;
 }
 
 .home-page-login-button {
