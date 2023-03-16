@@ -48,32 +48,6 @@ export const SideBar = () => {
     setIsCollapseButtonPressed((prev) => !prev);
   };
 
-  // Renders.
-  const renderSagLogo = () => {
-    if (isSidebarCollapsed) {
-      return (
-        <Logo
-          className="sag-sidebar-logo-collapsed"
-          logoIdentifier={LogoIdentifier.SAG}
-        />
-      );
-    }
-    return (
-      <div className="sag-sidebar-logo-container">
-        <Logo
-          className="sag-sidebar-logo-uncollapsed"
-          logoIdentifier={LogoIdentifier.SAG}
-        />
-        <div className="sag-sidebar-logo-text-container">
-          <span className="sag-sidebar-logo-text">
-            Student&apos;s Activity Group
-          </span>
-          <span className="sag-sidebar-logo-subtext">[M.L.V.T.E.C.]</span>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <ProSidebar
       className="sag-sidebar"
@@ -83,29 +57,51 @@ export const SideBar = () => {
       backgroundColor={Colors.White}
       rootStyles={sidebarMenuStyles.sidebar}
     >
-      {/* Header Logo */}
-      {renderSagLogo()}
+      <div className="sag-sidebar-top-section">
+        {/* Header Logo */}
+        <div className="sag-sidebar-logo-container">
+          {isSidebarCollapsed ? (
+            <Logo
+              className="sag-sidebar-logo-collapsed"
+              logoIdentifier={LogoIdentifier.SAG}
+            />
+          ) : (
+            <>
+              <Logo
+                className="sag-sidebar-logo-uncollapsed"
+                logoIdentifier={LogoIdentifier.SAG}
+              />
+              <div className="sag-sidebar-logo-text-container">
+                <span className="sag-sidebar-logo-text">
+                  Student&apos;s Activity Group
+                </span>
+                <span className="sag-sidebar-logo-subtext">[M.L.V.T.E.C.]</span>
+              </div>
+            </>
+          )}
+        </div>
 
-      {/* Main Menu */}
-      <Menu
-        menuItemStyles={{
-          button: ({ active }) =>
-            active
-              ? sidebarMenuStyles.menuItemButtonActive
-              : sidebarMenuStyles.menuItemButton,
-          icon: sidebarMenuStyles.menuButtonIcon,
-        }}
-      >
-        {menuItemsList.map((menuItem) => (
-          <SidebarMenuItem
-            key={menuItem.title}
-            title={menuItem.title}
-            navRoute={menuItem.route}
-            iconIdentifier={menuItem.iconIdentifier}
-            isActive={window.location.pathname === menuItem.route}
-          />
-        ))}
-      </Menu>
+        {/* Main Menu */}
+        <Menu
+          menuItemStyles={{
+            button: ({ active }) =>
+              active
+                ? sidebarMenuStyles.menuItemButtonActive
+                : sidebarMenuStyles.menuItemButton,
+            icon: sidebarMenuStyles.menuButtonIcon,
+          }}
+        >
+          {menuItemsList.map((menuItem) => (
+            <SidebarMenuItem
+              key={menuItem.title}
+              title={menuItem.title}
+              navRoute={menuItem.route}
+              iconIdentifier={menuItem.iconIdentifier}
+              isActive={window.location.pathname === menuItem.route}
+            />
+          ))}
+        </Menu>
+      </div>
 
       {/* Collapse Button */}
       <Button
