@@ -57,51 +57,49 @@ export const SideBar = () => {
       backgroundColor={Colors.White}
       rootStyles={sidebarMenuStyles.sidebar}
     >
-      <div className="sag-sidebar-top-section">
-        {/* Header Logo */}
-        <div className="sag-sidebar-logo-container">
-          {isSidebarCollapsed ? (
+      {/* Header Logo */}
+      <div className="sag-sidebar-logo-container">
+        {isSidebarCollapsed ? (
+          <Logo
+            className="sag-sidebar-logo-collapsed"
+            logoIdentifier={LogoIdentifier.SAG}
+          />
+        ) : (
+          <>
             <Logo
-              className="sag-sidebar-logo-collapsed"
+              className="sag-sidebar-logo-uncollapsed"
               logoIdentifier={LogoIdentifier.SAG}
             />
-          ) : (
-            <>
-              <Logo
-                className="sag-sidebar-logo-uncollapsed"
-                logoIdentifier={LogoIdentifier.SAG}
-              />
-              <div className="sag-sidebar-logo-text-container">
-                <span className="sag-sidebar-logo-text">
-                  Student&apos;s Activity Group
-                </span>
-                <span className="sag-sidebar-logo-subtext">[M.L.V.T.E.C.]</span>
-              </div>
-            </>
-          )}
-        </div>
-
-        {/* Main Menu */}
-        <Menu
-          menuItemStyles={{
-            button: ({ active }) =>
-              active
-                ? sidebarMenuStyles.menuItemButtonActive
-                : sidebarMenuStyles.menuItemButton,
-            icon: sidebarMenuStyles.menuButtonIcon,
-          }}
-        >
-          {menuItemsList.map((menuItem) => (
-            <SidebarMenuItem
-              key={menuItem.title}
-              title={menuItem.title}
-              navRoute={menuItem.route}
-              iconIdentifier={menuItem.iconIdentifier}
-              isActive={window.location.pathname === menuItem.route}
-            />
-          ))}
-        </Menu>
+            <div className="sag-sidebar-logo-text-container">
+              <span className="sag-sidebar-logo-text">
+                Student&apos;s Activity Group
+              </span>
+              <span className="sag-sidebar-logo-subtext">[M.L.V.T.E.C.]</span>
+            </div>
+          </>
+        )}
       </div>
+
+      {/* Main Menu */}
+      <Menu
+        menuItemStyles={{
+          button: ({ active }) =>
+            active
+              ? sidebarMenuStyles.menuItemButtonActive
+              : sidebarMenuStyles.menuItemButton,
+          icon: sidebarMenuStyles.menuButtonIcon,
+        }}
+      >
+        {menuItemsList.map((menuItem) => (
+          <SidebarMenuItem
+            key={menuItem.title}
+            title={menuItem.title}
+            navRoute={menuItem.route}
+            iconIdentifier={menuItem.iconIdentifier}
+            isActive={window.location.pathname === menuItem.route}
+          />
+        ))}
+      </Menu>
 
       {/* Collapse Button */}
       <Button
@@ -120,7 +118,7 @@ export const SideBar = () => {
           }
           color={isCollapseButtonPressed ? Colors.White : Colors.Primary}
         />
-        {!isSidebarCollapsed && 'Collapsed'}
+        {!isSidebarCollapsed && 'Collapse'}
       </Button>
     </ProSidebar>
   );

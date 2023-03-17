@@ -6,12 +6,6 @@
   flex-direction: column;
   justify-content: start;
 }
-.sag-sidebar-top-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 58vh;
-}
 
 .sag-sidebar-logo-container {
   display: flex;
@@ -19,23 +13,25 @@
   max-width: 100%;
   justify-content: start;
   align-items: center;
-  margin: 0.5rem 0 0 0.6rem;
+  height: 5rem;
+  padding-bottom: 1rem;
+  margin: 0.5rem 0.4rem;
 }
 .sag-sidebar-logo-uncollapsed > img {
-  max-width: 6.65rem;
+  max-width: 6.4rem;
 }
 .sag-sidebar-logo-text-container {
   display: flex;
   flex-direction: column;
   margin-top: 1.1rem;
   font-family: 'Alice', serif;
-  width: 8rem;
 }
 .sag-sidebar-logo-text {
   display: inline-block;
   line-height: 1.26rem;
   font-size: 1rem;
   font-weight: 400;
+  width: 7rem;
 }
 .sag-sidebar-logo-subtext {
   display: inline-block;
@@ -45,7 +41,8 @@
 }
 
 .sag-sidebar-logo-collapsed > img {
-  max-width: 100%;
+  max-width: 6.4rem;
+  width: 100%;
 }
 
 .sag-sidebar-collapse-button {
