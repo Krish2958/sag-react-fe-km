@@ -1,40 +1,33 @@
 import React from 'react';
-import Badge from 'react-bootstrap/Badge';
+import { Badge as BootstrapBadge } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
-import { useState } from 'react';
-import { EventBadgeVariant } from './EventBadgeVariant';
 import './Badge.css';
+import { Colors } from '../helpers';
 import { Icon, IconIdentifier } from '../../components';
 
-const EventBadge = ({ children, variant, icon }) => {
-  const [isHovering, setIsHovering] = useState(false);
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
+const Badge = ({ children, iconIdentifier, color = Colors.Primary }) => {
   return (
     <span className="badge">
-      <Badge
-        bg={variant}
-        className="Badge-padding"
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
+      <BootstrapBadge
+        className="badge-padding"
+        bg="n"
+        style={{ backgroundColor: color }}
       >
-        <Icon className="icon" iconIdentifier={icon}></Icon>
-        {isHovering && <div className="child">{children}</div>}
-      </Badge>
+        <Icon
+          className="icon"
+          iconIdentifier={iconIdentifier}
+          color={Colors.White}
+        ></Icon>
+        <div className="child">{children}</div>
+      </BootstrapBadge>
     </span>
   );
 };
 
-EventBadge.propTypes = {
-  variant: PropTypes.oneOf(Object.values(EventBadgeVariant)),
+Badge.propTypes = {
   children: PropTypes.node.isRequired,
-  icon: PropTypes.oneOf(Object.values(IconIdentifier)),
+  iconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
+  color: PropTypes.oneOf(Object.values(Colors)),
 };
 
-export default EventBadge;
-export { EventBadgeVariant, IconIdentifier };
-export { Icon };
+export default Badge;
