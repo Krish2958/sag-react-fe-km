@@ -21,14 +21,13 @@ const App = () => {
           {/* Navigate to Events page by default */}
           <Route path="/" element={<Navigate to={Events.route} />} />
 
-          {/* Auth Routes */}
-          <Route element={<AuthRoute />}>
-            {/* Login Route */}
-            <Route path={Login.route} element={<Login />} />
-          </Route>
-
           {/* Main Routes */}
           <Route exact path={Home.route} element={<Home />}>
+            {/* Auth Routes */}
+            <Route element={<AuthRoute />}>
+              <Route path={Login.route} element={<Login />} />
+            </Route>
+
             <Route element={<PublicRoute />}>
               {/* All Public Routes go here. */}
               <Route path={Events.route} element={<Events />} />

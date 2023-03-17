@@ -47,6 +47,6 @@ export const sidebarMenuStyles = {
     },
   },
   menuButtonIcon: {
-    marginLeft: '-0.22rem',
+    marginLeft: '-0.85rem',
   },
 };

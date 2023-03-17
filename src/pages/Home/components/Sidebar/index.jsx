@@ -63,12 +63,14 @@ export const SideBar = () => {
           <Logo
             className="sag-sidebar-logo-collapsed"
             logoIdentifier={LogoIdentifier.SAG}
+            showDropShadow={false}
           />
         ) : (
           <>
             <Logo
               className="sag-sidebar-logo-uncollapsed"
               logoIdentifier={LogoIdentifier.SAG}
+              showDropShadow={false}
             />
             <div className="sag-sidebar-logo-text-container">
               <span className="sag-sidebar-logo-text">
