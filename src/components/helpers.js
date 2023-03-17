@@ -7,3 +7,20 @@ export const isHexColorCode = (props, propName, comoponentName) => {
     );
   }
 };
+
+export const Colors = {
+  // Theme Colors.
+  Primary: '#0C3B5B',
+  PrimaryLight: '#2A648B',
+  Secondary: '#DCDCDC',
+  MainBackground: '#EDEDED',
+
+  // Blacks.
+  Black400: '#A7A7A7',
+
+  // Whites.
+  White: 'white',
+
+  // Customs.
+  HyperlinkBlue: '#729AE8',
+};

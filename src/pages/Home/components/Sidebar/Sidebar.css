@@ -1,0 +1,76 @@
+.sag-sidebar {
+  height: 100vh;
+}
+.sag-sidebar > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sag-sidebar-logo-container {
+  display: flex;
+  height: fit-content;
+  max-width: 100%;
+  justify-content: start;
+  align-items: center;
+  height: 5rem;
+  padding-bottom: 1rem;
+  margin: 0.5rem 0.4rem;
+}
+.sag-sidebar-logo-uncollapsed > img {
+  max-width: 6.4rem;
+}
+.sag-sidebar-logo-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.1rem;
+  font-family: 'Alice', serif;
+}
+.sag-sidebar-logo-text {
+  display: inline-block;
+  line-height: 1.26rem;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 7rem;
+}
+.sag-sidebar-logo-subtext {
+  display: inline-block;
+  line-height: 1.26rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.sag-sidebar-logo-collapsed > img {
+  max-width: 6.4rem;
+  width: 100%;
+}
+
+.sag-sidebar-collapse-button {
+  display: flex;
+  justify-content: flex-start;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-top: auto;
+  margin: auto 0.4rem 0.8rem 0.4rem;
+  filter: none;
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:hover {
+  box-shadow: 0.2rem 0 0 -0.1rem rgba(12, 59, 91, 1);
+  background-color: white;
+  color: var(--color-primary);
+}
+.sag-sidebar-collapse-button:active {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  filter: none;
+  box-shadow: none;
+}
+
+.sag-sidebar-collapse-button-icon {
+  padding: 0 0.4rem;
+}
+.sag-icon > svg {
+  fill: black;
+}

@@ -5,14 +5,16 @@ import iconSet from '../../assets/icons/selection.json';
 import './Icon.css';
 import { IconIdentifier } from './IconIdentifier';
 import { isUndefined } from 'lodash';
+import { Colors } from '../helpers';
 
 const Icon = ({
   iconIdentifier,
   imageSource,
   className = '',
   iconSize = 18,
+  color = Colors.Primary,
 }) => {
-  let iconClassName = 'icon-container';
+  let iconClassName = 'sag-icon';
 
   if (!isUndefined(imageSource)) {
     return (
@@ -24,7 +26,12 @@ const Icon = ({
 
   return (
     <div className={[iconClassName, className].join(' ')}>
-      <IcoMoon iconSet={iconSet} icon={iconIdentifier} size={iconSize} />
+      <IcoMoon
+        iconSet={iconSet}
+        icon={iconIdentifier}
+        size={iconSize}
+        color={color}
+      />
     </div>
   );
 };
@@ -35,6 +42,7 @@ Icon.propTypes = {
   imageSource: PropType.string,
   isEnlarged: PropType.bool,
   iconSize: PropType.number,
+  color: PropType.oneOf(Object.values(Colors)),
 };
 
 export default Icon;

@@ -3,21 +3,38 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './app.css';
 import { AuthRoute, ProtectedRoute, PublicRoute } from './helpers';
-import { Home, Login, PageNotFound } from './pages';
+import {
+  Home,
+  Login,
+  PageNotFound,
+  Events,
+  About,
+  Clubs,
+  Sports,
+} from './pages';
 
 const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route exact path={Home.route} element={<Home />}>
-            <Route element={<AuthRoute />}>
-              {/* Login Route */}
-              <Route path={Login.route} element={<Login />} />
-            </Route>
+          {/* Navigate to Events page by default */}
+          <Route path="/" element={<Navigate to={Events.route} />} />
 
+          {/* Auth Routes */}
+          <Route element={<AuthRoute />}>
+            {/* Login Route */}
+            <Route path={Login.route} element={<Login />} />
+          </Route>
+
+          {/* Main Routes */}
+          <Route exact path={Home.route} element={<Home />}>
             <Route element={<PublicRoute />}>
               {/* All Public Routes go here. */}
+              <Route path={Events.route} element={<Events />} />
+              <Route path={Clubs.route} element={<Clubs />} />
+              <Route path={Sports.route} element={<Sports />} />
+              <Route path={About.route} element={<About />} />
             </Route>
 
             <Route element={<ProtectedRoute />}>
