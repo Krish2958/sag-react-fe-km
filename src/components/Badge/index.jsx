@@ -10,14 +10,14 @@ const Badge = ({ children, iconIdentifier, color = Colors.Primary }) => {
     <span className="badge">
       <BootstrapBadge
         className="badge-padding"
-        bg="n"
+        bg=""
         style={{ backgroundColor: color }}
       >
         <Icon
           className="icon"
           iconIdentifier={iconIdentifier}
           color={Colors.White}
-        ></Icon>
+        />
         <div className="child">{children}</div>
       </BootstrapBadge>
     </span>
