@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
 import { Button, ButtonVariant, Icon, IconIdentifier } from '..';
 import { Illustration } from '../../assets/images';
 import './Notification.css';
 
 const NotificationButton = () => {
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
+  const [showNotificationOverlay, setShowNotificationOverlay] = useState(false);
+  const targetRef = useRef(null);
 
   const handleClick = (event) => {
-    setShow(!show);
-    setTarget(event.target);
+    setShowNotificationOverlay(!showNotificationOverlay);
+    targetRef.current = event.target;
   };
 
   return (
     <div>
       <Button
-        style={{ backgroundColor: show ? 'white' : '#DCDCDC' }}
+        style={{
+          backgroundColor: showNotificationOverlay ? 'white' : '#DCDCDC',
+        }}
         onClick={handleClick}
         className="notification-bell-icon-button"
         variant={ButtonVariant.Secondary}
@@ -25,8 +27,8 @@ const NotificationButton = () => {
       </Button>
       <Overlay
         className="notification-overlay"
-        show={show}
-        target={target}
+        show={showNotificationOverlay}
+        target={targetRef.current}
         placement="bottom"
       >
         <Popover>
