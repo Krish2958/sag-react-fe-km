@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
 import { Button, ButtonVariant, Icon, IconIdentifier } from '..';
 import { Illustration } from '../../assets/images';
-import './Notification.css';
+import './NotificationButton.css';
 
 const NotificationButton = () => {
   const [showNotificationOverlay, setShowNotificationOverlay] = useState(false);
