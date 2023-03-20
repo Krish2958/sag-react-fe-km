@@ -10,13 +10,11 @@ const EventCard = () => {
         src="src/assets/images/Rectangle 224.png"
       />
       <Card.Body>
-        <Card.Title>Essay Writing Competition</Card.Title>
-        <Card.Text>Publication Club</Card.Text>
+        <Card.Title className="title">Essay Writing Competition</Card.Title>
+        <Card.Text className="club ">Publication Club</Card.Text>
         <div className="square">
-          <div className="content">
-            <div className="date">24</div>
-            <div className="month">MAR</div>
-          </div>
+          <div className="date">24</div>
+          <div className="month">MAR</div>
         </div>
       </Card.Body>
     </Card>
