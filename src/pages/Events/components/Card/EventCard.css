@@ -1,0 +1,43 @@
+.Card{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+    height: 26rem;
+    border-radius: 1rem;
+    margin-left: 20px;
+    }
+    .imgcard{
+    padding-top: 0.5rem;
+    border-radius: 0.5rem;
+    
+    width: 15rem;
+    height: 16rem;
+    }
+    .square{
+    background-color : #0C3B5B;
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    border-radius: 0.5rem;
+    color: white;
+    margin-left: 70%;
+}
+
+.date{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 1.2rem;
+}
+.month{
+    
+    font-size: 1rem;
+    margin-left: 1.2rem;
+    
+}
+.title{
+    font-weight: bolder;
+}
+.club{
+    font-weight: lighter;
+}
