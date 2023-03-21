@@ -1,18 +1,14 @@
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    cursor:pointer;
-    border-color: var(--color-primary);
-    box-shadow: none !important;
-  }
-  
-  input[type="checkbox"]:checked {
-    background-color:var(--color-primary);
-    border-color: var(--color-primary);
-  }
-  
-  input[type="checkbox"]:focus {
-    border-color: var(--color-primary);
-  }
-  
+.form-check-input {
+  cursor:pointer;
+  border-color: var(--color-primary);
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--color-primary);
+}
