@@ -14,7 +14,7 @@ export const Login = () => {
   return (
     <div className="login-page">
       <div className="login-form-container">
-        <h1 className="title">Get Started with SAG</h1>
+        <div className="title">Get Started with SAG</div>
         <img className="illustration" src={Illustration.UserChilling} />
         <Button className="login-form-button" variant={ButtonVariant.Secondary} onClick={() => googleSignInHandler()}>
           <Icon iconIdentifier={IconIdentifier.Google} /> Sign-in with Google

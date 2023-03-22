@@ -6,8 +6,7 @@ on:
       - edited
       - reopened
     branches:
-      - master
-      - development
+      - '*'
 jobs:
   Linting:
     runs-on: ubuntu-latest

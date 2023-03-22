@@ -2,16 +2,17 @@
   overflow: hidden;
   position: relative;
   height: 100%;
+  display: flex;
 }
 
 .home-page-login-button {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 1.9rem;
+  right: 1.9rem;
 }
 
 .home > .sag-button--secondary {
-  padding: 0.2rem 1rem;
+  padding: 0.4rem 1.2rem;
   border-radius: var(--rounded-button-border-radius);
   font-weight: 600;
   filter: none;

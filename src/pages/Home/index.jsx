@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Button, ButtonVariant } from '../../components';
-import { PageWrapper } from './components';
+import { PageWrapper, SideBar } from './components';
 import { isAuthenticated } from '../../helpers';
 import './Home.css';
 import { Login } from '../Login';
@@ -41,7 +41,10 @@ export const Home = () => {
     <div className="home">
       {/* Profile Button Components */}
       {renderProfileButtons()}
+
       {/* Navigation Panel Component */}
+      <SideBar />
+
       <PageWrapper>
         <Outlet />
       </PageWrapper>

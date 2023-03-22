@@ -13,6 +13,7 @@ const Button = ({
   variant = ButtonVariant.Primary,
   className = '',
   children,
+  ...rest
 }) => {
   const classNames = [`sag-button--${variant}`, className];
 
@@ -21,6 +22,7 @@ const Button = ({
       variant="primary"
       className={classNames.join(' ')}
       onClick={onClick}
+      {...rest}
     >
       {Children.toArray(children)}
     </BootstrapButton>
