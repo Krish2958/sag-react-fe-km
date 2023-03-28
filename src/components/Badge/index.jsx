@@ -9,16 +9,18 @@ const Badge = ({ children, iconIdentifier, color = Colors.Primary }) => {
   return (
     <span className="badge">
       <BootstrapBadge
-        className="badge-padding"
+        bsPrefix=""
+        className="sagbadge-padding"
         bg=""
         style={{ backgroundColor: color }}
       >
         <Icon
-          className="icon"
+          bsPrefix=""
+          className="sagicon"
           iconIdentifier={iconIdentifier}
           color={Colors.White}
         />
-        <div className="child">{children}</div>
+        <div className="sagchild">{children}</div>
       </BootstrapBadge>
     </span>
   );

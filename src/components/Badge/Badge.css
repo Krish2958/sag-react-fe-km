@@ -1,4 +1,4 @@
-.badge-padding {
+.sagbadge-padding {
     padding: 0.16rem 0.5rem;
     font-size: 0.97rem;
 }
@@ -9,19 +9,17 @@
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
-    
 }
   
-.icon {
+.sagicon {
     padding-bottom: 0.2rem;
     fill: white;
 }
 
-.child {
+.sagchild {
   display: none;
-
 }
 
-.badge :hover .child {
+.badge:hover .sagchild {
   display: block;
 }
