@@ -1,3 +1,7 @@
 .sag-logo-drop-shadow {
   filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
 }
+
+.sag-logo > img {
+  width: 100%;
+}
