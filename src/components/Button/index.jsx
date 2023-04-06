@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { Button as BootstrapButton } from 'react-bootstrap';
 import './Button.css';
-import { Colors } from '..//..//components';
+import { Colors } from '../../components';
 
 export const ButtonVariant = {
   Primary: 'primary',
@@ -14,7 +14,7 @@ const Button = ({
   variant = ButtonVariant.Primary,
   className = '',
   children,
-  textColor,
+  fontColor,
   ...rest
 }) => {
   const classNames = [`sag-button--${variant}`, className];
@@ -24,7 +24,7 @@ const Button = ({
       variant="primary"
       className={classNames.join(' ')}
       onClick={onClick}
-      style={{ color: textColor }}
+      style={{ color: fontColor }}
       {...rest}
     >
       {Children.toArray(children)}
@@ -37,7 +37,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  textColor: PropTypes.oneOf(Object.values(Colors)),
+  fontColor: PropTypes.oneOf(Object.values(Colors)),
 };
 
 export default Button;
