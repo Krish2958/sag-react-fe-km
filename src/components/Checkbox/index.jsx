@@ -1,11 +1,24 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+import { FormCheck } from 'react-bootstrap';
 import './Checkbox.css';
+import { PropTypes } from "prop-types"
 
-const Checkbox = () => {
+
+const Checkbox = ({children}) => {
   return (
-      <Form.Check className="form-checks" aria-label="option" />
+    <>
+      <FormCheck>
+        <FormCheck.Label className="checkbox-text">
+          <FormCheck.Input className="sag-checkbox" />
+          {children}
+        </FormCheck.Label>
+      </FormCheck>
+    </>
   );
 };
+
+Checkbox.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default Checkbox;

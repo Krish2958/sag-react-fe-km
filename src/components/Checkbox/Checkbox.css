@@ -1,14 +1,18 @@
-.form-check-input {
+.sag-checkbox {
   cursor:pointer;
   border-color: var(--color-primary);
   box-shadow: none !important;
 }
 
-.form-check-input:checked {
+.sag-checkbox:checked {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.form-check-input:focus {
+.sag-checkbox:focus {
   border-color: var(--color-primary);
+}
+
+.checkbox-text {
+  cursor: pointer;
 }
