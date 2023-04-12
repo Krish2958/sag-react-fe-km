@@ -12,14 +12,14 @@
 }
   
 .sagicon {
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.1rem;
     fill: white;
 }
 
-.sagchild {
+/* .sagchild {
   display: none;
 }
 
 .badge:hover .sagchild {
   display: block;
-}
+} */
