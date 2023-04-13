@@ -1,35 +1,32 @@
 import React from 'react';
 import { Badge as BootstrapBadge } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
-import './Badge.css';
-import { Colors } from '../helpers';
-import { Icon, IconIdentifier } from '../../components';
 
-const Badge = ({ children, iconIdentifier, color = Colors.Primary }) => {
+import { isHexColorCode, Colors } from '../helpers';
+import { Icon } from '../../components';
+import './Badge.css';
+
+const Badge = ({ text, iconIdentifier, color = Colors.Primary }) => {
   return (
-    <span className="badge">
-      <BootstrapBadge
-        bsPrefix=""
-        className="sagbadge-padding"
-        bg=""
-        style={{ backgroundColor: color }}
-      >
-        <Icon
-          bsPrefix=""
-          className="sagicon"
-          iconIdentifier={iconIdentifier}
-          color={Colors.White}
-        />
-        <div className="sagchild">{children}</div>
-      </BootstrapBadge>
-    </span>
+    <BootstrapBadge
+      className="sag-badge-padding"
+      bg="sag-color"
+      style={{ backgroundColor: color }}
+    >
+      <Icon
+        className="sag-icon"
+        iconIdentifier={iconIdentifier}
+        color={Colors.White}
+      />
+      {text}
+    </BootstrapBadge>
   );
 };
 
 Badge.propTypes = {
-  children: PropTypes.node.isRequired,
-  iconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
-  color: PropTypes.oneOf(Object.values(Colors)),
+  text: PropTypes.node.isRequired,
+  iconIdentifier: PropTypes.node.isRequired,
+  color: isHexColorCode,
 };
 
 export default Badge;

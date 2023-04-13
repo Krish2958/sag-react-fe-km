@@ -23,10 +23,4 @@ export const Colors = {
 
   // Customs.
   HyperlinkBlue: '#729AE8',
-
-  // Pill Colors
-  PillYellow: '#FFC107',
-  PillGreen: '#198754',
-  PillBlue: '#0D6EFD',
-  PillRed: '#DC3545',
 };
