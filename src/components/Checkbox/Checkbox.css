@@ -1,5 +1,5 @@
 .sag-checkbox {
-  cursor:pointer;
+  cursor: pointer;
   border-color: var(--color-primary);
   box-shadow: none !important;
 }
@@ -13,6 +13,6 @@
   border-color: var(--color-primary);
 }
 
-.checkbox-text {
+.sag-checkbox__label {
   cursor: pointer;
 }
