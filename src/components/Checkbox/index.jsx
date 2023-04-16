@@ -1,38 +1,25 @@
-import React, { forwardRef } from 'react';
-import { FormCheck } from 'react-bootstrap';
-import { PropTypes } from 'prop-types';
+import React from 'react';
+import Form from 'react-bootstrap/Form';
 import './Checkbox.css';
-import { useState } from 'react';
 
-const Checkbox = forwardRef(({ label, children }, ref) => {
-  const [checked, setChecked] = useState(false);
-
-  const handleCheckboxChange = (event) => {
-    const isChecked = event.target.checked;
-    setChecked(isChecked);
-    // onChange && onChange(isChecked);
-  };
-
+const Checkbox = ({ label, checked, onChange }) => {
   return (
-    <FormCheck>
-      <FormCheck.Label className=".sag-checkbox__label">
-        <FormCheck.Input
-          type="checkbox"
-          label={label}
-          checked={checked}
-          onChange={handleCheckboxChange}
-          ref={ref}
-          className="sag-checkbox"
-        />
-        {children}
-      </FormCheck.Label>
-    </FormCheck>
+    <Form.Check>
+      <Form.Check.Input
+        className="sag-checkbox"
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
+        id={`checkbox-${label}`}
+      />
+      <Form.Check.Label
+        className="sag-checkbox__label"
+        htmlFor={`checkbox-${label}`}
+      >
+        {label}
+      </Form.Check.Label>
+    </Form.Check>
   );
-});
-
-Checkbox.propTypes = {
-  children: PropTypes.node,
-  label: PropTypes.node,
 };
 
 export default Checkbox;
