@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import './ClearAllButton.css';
 
 const ClearAllButton = ({ onClick }) => {
@@ -8,6 +9,10 @@ const ClearAllButton = ({ onClick }) => {
       Clear All
     </Button>
   );
+};
+
+ClearAllButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ClearAllButton;
