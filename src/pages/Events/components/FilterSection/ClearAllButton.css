@@ -1,0 +1,20 @@
+.filter-clear-all {
+  background-color: transparent;
+  border: none;
+  color: #729ae8;
+  cursor: pointer;
+  --bs-btn-active-color: #000000;
+}
+
+.filter-clear-all:hover,
+.filter-clear-all:focus {
+  border: none;
+  color: #729ae8;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.filter-clear-all:active {
+  background-color: transparent !important;
+}
+

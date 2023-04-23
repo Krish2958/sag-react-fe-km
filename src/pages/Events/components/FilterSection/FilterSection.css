@@ -1,0 +1,69 @@
+.sag-filter__section {
+  position: absolute;
+  width: 22rem;
+  height: 52rem;
+  left: 10rem;
+  top: 10rem;
+  background-color: #fff;
+  text-align: left;
+  border-radius: 1.2rem;
+}
+
+.sag-filter__header {
+  display: inline-flex;
+  gap: 7.34rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  align-items: center;
+  padding: 0.34rem 0.34rem;
+  border-bottom: 0.07rem solid #dcdcdc;
+  padding-bottom: 0.34rem;
+  max-width: 85%;
+}
+
+.sag-filter__text {
+  font-size: 2.14rem;
+}
+
+.sag-filter {
+  --bs-accordion-border-radius: none;
+}
+
+.accordion-button {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+
+.accordion-button::after {
+  content: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fff;
+  color: black;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  color: none;
+}
+
+.sag-filter__chevron-icon {
+  margin-left: auto;
+}
+
+.sag-filter__item {
+  border: none;
+  border-bottom: 0.07rem solid #dcdcdc;
+  max-width: 85%;
+  margin: auto;
+}
+
+.sag-filter__body {
+  margin-top: -1rem;
+  font-weight: 400;
+  font-size: 1.34rem;
+}
