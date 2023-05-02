@@ -14,7 +14,7 @@ const Button = ({
   variant = ButtonVariant.Primary,
   className = '',
   children,
-  fontColor = Colors.White,
+  fontColor = Colors,
   ...rest
 }) => {
   const classNames = [`sag-button--${variant}`, className];
