@@ -14,7 +14,7 @@ const Badge = ({ text, iconIdentifier, color = Colors.Primary }) => {
       style={{ backgroundColor: color }}
     >
       <Icon
-        className="sag-icon"
+        className="sag-badge__icon"
         iconIdentifier={iconIdentifier}
         color={Colors.White}
       />
