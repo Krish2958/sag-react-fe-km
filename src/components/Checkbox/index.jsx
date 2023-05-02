@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import './Checkbox.css';
+import PropTypes from 'prop-types';
 
 const Checkbox = ({ label, checked, onChange }) => {
   return (
@@ -20,6 +21,12 @@ const Checkbox = ({ label, checked, onChange }) => {
       </Form.Check.Label>
     </Form.Check>
   );
+};
+
+Checkbox.propTypes = {
+  label: PropTypes.node,
+  checked: PropTypes.node,
+  onChange: PropTypes.node,
 };
 
 export default Checkbox;
