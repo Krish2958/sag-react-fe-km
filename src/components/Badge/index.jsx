@@ -3,14 +3,14 @@ import { Badge as BootstrapBadge } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
 
 import { isHexColorCode, Colors } from '../helpers';
-import { Icon } from '../../components';
+import { Icon, IconIdentifier } from '../../components';
 import './Badge.css';
 
 const Badge = ({ text, iconIdentifier, color = Colors.Primary }) => {
   return (
     <BootstrapBadge
-      className="sag-badge-padding"
-      bg="sag-color"
+      className="sag-badge"
+      bg={null}
       style={{ backgroundColor: color }}
     >
       <Icon
@@ -24,8 +24,8 @@ const Badge = ({ text, iconIdentifier, color = Colors.Primary }) => {
 };
 
 Badge.propTypes = {
-  text: PropTypes.node.isRequired,
-  iconIdentifier: PropTypes.node.isRequired,
+  text: PropTypes.string,
+  iconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
   color: isHexColorCode,
 };
 
