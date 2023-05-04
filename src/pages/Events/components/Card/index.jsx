@@ -1,24 +1,94 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './EventCard.css';
-import { Icon, Logo, LogoIdentifier } from '..//..//..//..//components';
-const EventCard = () => {
+import { PropTypes } from 'prop-types';
+import { Badge, Colors, Icon, IconIdentifier } from '../../../../components';
+const EventCard = ({
+  title,
+  category,
+  clubname,
+  clublogo,
+  eventdate,
+  month,
+  pastEvent,
+}) => {
+  const [isNotifiable, setNotifiable] = useState(true);
+
+  const handleToggle = () => {
+    setNotifiable((current) => !current);
+  };
+
   return (
-    <Card className="ECard">
+    <Card className="sag-card" onClick={null}>
       <Card.Img
-        className="imgcard"
+        className="sag-imgcard"
         variant="top"
         src="src/assets/images/Rectangle 224.png"
       />
       <Card.Body>
-        <Card.Title className="ititle">Essay Writing Competition</Card.Title>
-        <div className="club">
-          {/* <Icon imageSource='src/assets/images/club-logos/publication-club-logo.png' iconSize='2rem' ></Icon> */}
-          <Card.Text className="textclub">Publication Club</Card.Text>
+        <Card.Title className="sag-card__title">{title}</Card.Title>
+        <div className="sag-notification" onClick={handleToggle}>
+          {pastEvent ? (
+            <Icon
+              className="sag-card__gallery"
+              iconIdentifier={IconIdentifier.Gallery}
+            />
+          ) : isNotifiable ? (
+            <Icon
+              className="sag-card__bell"
+              iconIdentifier={IconIdentifier.Bell}
+            />
+          ) : (
+            <Icon
+              className="sag-card__belloff"
+              iconIdentifier={IconIdentifier.BellOff}
+            />
+          )}
+        </div>
+        <div className="sag-card__badge">
+          <Badge
+            iconIdentifier={IconIdentifier.Trophy}
+            color="#F03FA9"
+            text={category[0]}
+          />
+          <Badge
+            iconIdentifier={IconIdentifier.Bulb}
+            color="#16537E"
+            text={category[1]}
+          />
+        </div>
+        <span className="sag-card__club">
+          <Icon
+            className="sag-logoclub"
+            imageSource={clublogo}
+            iconSize="2px"
+          ></Icon>
+          <Card.Text className="sag-clubname">{clubname}</Card.Text>
+        </span>
+        <div
+          className="sag-square"
+          style={{ backgroundColor: pastEvent ? '#DCDCDC' : '#0C3B5B' }}
+        >
+          {
+            <>
+              <h3 className="sag-date">{eventdate}</h3>
+              <h5 className="sag-month">{month}</h5>
+            </>
+          }
         </div>
       </Card.Body>
     </Card>
   );
+};
+
+EventCard.propTypes = {
+  title: PropTypes.node.isRequired,
+  category: PropTypes.node,
+  clubname: PropTypes.node.isRequired,
+  clublogo: PropTypes.node.isRequired,
+  eventdate: PropTypes.node.isRequired,
+  month: PropTypes.node.isRequired,
+  pastEvent: PropTypes.node.bool,
 };
 
 export default EventCard;

@@ -15,6 +15,7 @@ export const IconIdentifier = {
   Facebook: 'facebook',
   Google: 'google',
   Groups: 'groups',
+  Gallery: 'gallery',
   Home: 'home',
   Info: 'info',
   Keynote: 'keynote',

@@ -1,0 +1,16 @@
+.sag-badge-padding {
+    padding: 0.16rem 0.42rem;
+    font-size: 0.7rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 3px;
+}
+
+.sag-icon {
+    padding-bottom: 0.1rem;
+    fill: white;
+}
+
