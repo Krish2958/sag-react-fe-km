@@ -10,13 +10,14 @@
     cursor:pointer;
 }
 
-.sag-card__badge{
+.sag-card__badge {
     display: inline-flex;
     position:absolute;
     top: 12.2rem;
     left: 0.5rem;
 
 }
+
 .sag-imgcard {
     padding-top: 0.8rem;
     border-radius: 0.5rem;
@@ -24,7 +25,7 @@
     height: 10.15rem;
 }
 
-.sag-card__title{
+.sag-card__title {
     position: absolute;
     left: 0.8rem;
     font-size: 1.1rem;
@@ -32,26 +33,26 @@
     top: 10.75rem;
 }
 
-.sag-logoclub{
+.sag-logoclub {
     width: 2rem;
     /* bottom: 0.8rem; */
 }
 
-.sag-clubname{
+.sag-clubname {
     font-size: 0.8rem;
     font-weight: bolder;
     padding-top: 0.6rem;
     line-height: 0.8rem;
     padding-left: 0.18rem;
 }
-.sag-card__club{
+.sag-card__club {
     display: inline-flex;
     position: absolute;
     bottom: 0.4rem;
     left: 0.6rem;
 }
 
-.sag-square{
+.sag-square {
     height: 0;
     padding: 7%;
     width: 7%;
@@ -63,7 +64,7 @@
 }
 
 
-.sag-date{
+.sag-date {
     position: absolute;
     font-size: 1.2rem;
     font-weight: bolder;
@@ -71,7 +72,7 @@
     top: 0.26rem;
     left: 0.73rem;
 }
-.sag-month{
+.sag-month {
     position: absolute;
     font-size: 0.7rem;
     font-weight: bolder;
@@ -80,7 +81,7 @@
     left: 0.8rem;
 }
 
-.sag-notification{
+.sag-notification {
     background-color: white;
     cursor: pointer;
     position: absolute;
@@ -93,31 +94,29 @@
     box-shadow: 0.13rem 0.26rem 0.53rem rgba(0, 0, 0, 0.25);
 }
 
-.sag-notification:active{
+.sag-notification:active {
  
   transform: translateY(0.13rem);
 }
-.sag-card__bell{
+.sag-card__bell {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
-.sag-card__gallery{
+.sag-card__gallery {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
-.sag-card__belloff{
+.sag-card__belloff {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
 
-.sag-card:hover{
+.sag-card:hover {
     box-shadow: 0.13rem 0.26rem 0.53rem rgba(0, 0, 0, 0.25);
 }
-
-
