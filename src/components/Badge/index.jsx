@@ -24,7 +24,7 @@ const Badge = ({ text, iconIdentifier, color = Colors.Primary }) => {
 };
 
 Badge.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   iconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
   color: isHexColorCode,
 };
