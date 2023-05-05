@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { Illustration } from '../../assets/images';
 import { Button, ButtonVariant, IconIdentifier } from '../../components';
 import { Home } from '../Home';
-
 import { useGoogleLoginRequest } from '../../api';
 import { TokenManager } from '../../helpers';
-import { toast } from 'react-toastify';
+import { generateGoogleOAuthUrl } from './helpers';
 
 import './Login.css';
 
@@ -65,8 +65,8 @@ export const Login = () => {
   const onClickSignInHandler = () => {
     setIsGoogleLoginButtonLoading(!isGoogleLoginButtonLoading);
 
-    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive.metadata.readonly&access_type=offline&include_granted_scopes=true&response_type=code&redirect_uri=${import.meta.env.VITE_GOOGLE_LOGIN_REDIRECT_URI.toString()}&client_id=${import.meta.env.VITE_GOOGLE_CLIENT_ID.toString()}`;
-    window.open(authUrl, '_self');
+    const googleOAuthUrl = generateGoogleOAuthUrl();
+    window.open(googleOAuthUrl, '_self');
   };
 
   return (
