@@ -4,18 +4,23 @@ import { ProSidebarProvider } from 'react-pro-sidebar';
 
 // Add bootstrap to the project
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+// Add react-toastify
+import 'react-toastify/dist/ReactToastify.css';
 
 import './index.css';
 import App from './app';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from './api';
+import { ToastManager } from './components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-    <ProSidebarProvider>
-      <React.StrictMode>
+  <>
+    <ToastManager />
+    <QueryClientProvider client={queryClient}>
+      <ProSidebarProvider>
         <App />
-      </React.StrictMode>
-    </ProSidebarProvider>
-  </GoogleOAuthProvider>,
+      </ProSidebarProvider>
+    </QueryClientProvider>
+  </>,
 );
