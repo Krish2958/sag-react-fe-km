@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './EventCard.css';
 import { PropTypes } from 'prop-types';
-import { Badge, Colors, Icon, IconIdentifier } from '../../../../components';
+import { Badge, Icon, IconIdentifier } from '../../../../components';
 const EventCard = ({
   title,
   category,
