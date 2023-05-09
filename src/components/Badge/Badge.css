@@ -5,11 +5,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-weight: 400;
     gap: 0.3rem;
     margin:0.2rem;
 }
-
-.sag-badge__icon {
-    padding-bottom: 0.1rem;
-}
-
