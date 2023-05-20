@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { Colors, Icon, IconIdentifier } from '..';
 import './Toast.css';
 
-export const ToastManager = () => {
+const ToastManager = () => {
   const closeButton = ({ closeToast }) => {
     return (
       <Icon
@@ -35,3 +35,5 @@ export const ToastManager = () => {
     />
   );
 };
+
+export default ToastManager;

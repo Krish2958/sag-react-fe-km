@@ -4,4 +4,5 @@ export { default as Logo, LogoIdentifier } from './Logo';
 export { default as Icon, IconIdentifier } from './Icon';
 export { default as PhotoCarousel, PhotoCarouselItem } from './PhotoCarousel';
 export { default as Pill } from './Pill';
-export * from './Toast';
+export { default as Toast } from './Toast';
+export { default as Checkbox } from './Checkbox';
