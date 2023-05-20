@@ -40,6 +40,7 @@ export const Home = () => {
   return (
     <div className="home">
       {/* Profile Button Components */}
+      <NotificationButton />
       {renderProfileButtons()}
 
       {/* Navigation Panel Component */}
