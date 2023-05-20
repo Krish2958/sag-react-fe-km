@@ -51,3 +51,8 @@ The PR title should also contain JIRA task id in the following format:
 `[JIRA-ID]` (eg. `[SWA-47]`)
 
 Please ensure you commits contain meaningful messages.
+
+
+### Deployement
+***Development*** environment deployed at: https://sag-dev.up.railway.app\
+This is deployed using Railway services.

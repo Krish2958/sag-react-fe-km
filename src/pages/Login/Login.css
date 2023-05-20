@@ -6,8 +6,8 @@
 }
 
 .login-page > .illustration {
-  width: 30rem;
-  height: 30rem;
+  width: 42vw;
+  height: auto;
 }
 
 .login-form-container {
@@ -16,9 +16,9 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 3.5rem 0;
-  width: 19rem;
-  height: 22.5rem;
+  padding: 5.2rem 0;
+  width: 26rem;
+  height: 31rem;
   background-color: white;
   border-radius: var(--page-border-radius);
   /* From Figma */
@@ -26,17 +26,15 @@
 }
 
 .login-form-button {
-  width: 15rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 18rem;
 }
 
 .login-form-container > .illustration {
-  width: 10rem;
-  margin-bottom: 0.5rem;
+  width: 13rem;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .login-page > .illustration {
     display: none;
   }

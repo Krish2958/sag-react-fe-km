@@ -1,7 +1,7 @@
 :root {
   /* Making root font size as 20px, according to the design */
   /* Use rem everywhere to define component size */
-  /* 1rem = 20px; */
-  font-size: 20px;
+  /* 1rem = 15px; */
+  font-size: 15px;
   font-family: 'Roboto';
 }

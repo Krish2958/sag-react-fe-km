@@ -3,8 +3,8 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Button, ButtonVariant } from '../../components';
 import { PageWrapper, SideBar } from './components';
 import { isAuthenticated } from '../../helpers';
-import './Home.css';
 import { Login } from '../Login';
+import './Home.css';
 
 export const Home = () => {
   // Hooks.
