@@ -1,28 +1,22 @@
 .sag-filter__section {
   position: absolute;
-  width: 22rem;
+  width: 15rem;
   height: 52rem;
-  left: 10rem;
-  top: 10rem;
+  left: 6.5rem;
+  top: 6rem;
   background-color: #fff;
   text-align: left;
-  border-radius: 1.2rem;
+  border-radius: 0.9rem;
 }
 
 .sag-filter__header {
   display: inline-flex;
-  gap: 7.34rem;
-  margin-top: 2rem;
-  margin-left: 2rem;
+  gap: 4.3rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
   align-items: center;
-  padding: 0.34rem 0.34rem;
-  border-bottom: 0.07rem solid #dcdcdc;
-  padding-bottom: 0.34rem;
-  max-width: 85%;
-}
-
-.sag-filter__text {
-  font-size: 2.14rem;
+  border-bottom: 0.07rem solid var(--color-secondary);
+  max-width: 100%;
 }
 
 .sag-filter {
@@ -32,8 +26,7 @@
 .accordion-button {
   font-style: normal;
   font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1.12rem;
 }
 
 .accordion-button::after {
@@ -57,13 +50,22 @@
 
 .sag-filter__item {
   border: none;
-  border-bottom: 0.07rem solid #dcdcdc;
+  border-bottom: 0.07rem solid var(--color-secondary);
   max-width: 85%;
   margin: auto;
 }
 
 .sag-filter__body {
-  margin-top: -1rem;
+  margin-top: -1.2rem;
+  margin-left: -0.6rem;
   font-weight: 400;
-  font-size: 1.34rem;
+  font-size: 0.9rem;
+}
+
+.accordion {
+  --bs-accordion-btn-padding-x: 0.36rem;
+}
+
+.form-check {
+  margin-bottom: 0rem;
 }

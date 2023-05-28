@@ -1,17 +1,15 @@
 .filter-clear-all {
-  background-color: transparent;
-  border: none;
-  color: #729ae8;
+  color: var(--color-hyperlink-blue);
   cursor: pointer;
-  --bs-btn-active-color: #000000;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .filter-clear-all:hover,
 .filter-clear-all:focus {
-  border: none;
-  color: #729ae8;
+  color: var(--color-hyperlink-blue);
   cursor: pointer;
-  background-color: transparent;
 }
 
 .filter-clear-all:active {

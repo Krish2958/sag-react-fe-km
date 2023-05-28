@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Checkbox from '../Checkbox';
+import { Checkbox } from '../../../../components';
 import ClearAllButton from './ClearAllButton';
-import { Icon, IconIdentifier } from '..';
+import { Icon, IconIdentifier } from '../../../../components';
 import './FilterSection.css';
 
 const FilterSection = () => {
@@ -41,6 +41,10 @@ const FilterSection = () => {
     },
   ]);
 
+  const [activeAccordionId, setActiveAccordionId] = useState(
+    accordionData.map((accordion) => `${accordion.id}`)
+  );
+
   const handleClearAll = () => {
     const newData = accordionData.map((accordion) => ({
       ...accordion,
@@ -53,25 +57,45 @@ const FilterSection = () => {
     setAccordionData(newData);
   };
 
-  const [activeKey, setActiveKey] = useState(
-    accordionData.map((accordion) => `${accordion.id}`),
-  );
-
   const toggleAccordion = (id) => {
-    setActiveKey((prev) =>
-      prev.includes(id) ? prev.filter((key) => key !== id) : [...prev, id],
+    setActiveAccordionId((prev) =>
+      prev.includes(id) ? prev.filter((key) => key !== id) : [...prev, id]
     );
+  };
+
+  const handleCheckboxChange = (accordionId, checkboxId) => {
+    const newData = accordionData.map((accordion) => {
+      if (accordion.id === accordionId) {
+        const updatedContent = accordion.content.map((checkbox) => {
+          if (checkbox.id === checkboxId) {
+            return {
+              ...checkbox,
+              isChecked: !checkbox.isChecked,
+            };
+          }
+          return checkbox;
+        });
+
+        return {
+          ...accordion,
+          content: updatedContent,
+        };
+      }
+      return accordion;
+    });
+
+    setAccordionData(newData);
   };
 
   return (
     <div className="sag-filter__section">
       <div className="sag-filter__header">
-        <div className="sag-filter__text">Filter</div>
+        <div className="sag-filter__text">Filters</div>
         <ClearAllButton onClick={handleClearAll} />
       </div>
       <Accordion
         className="sag-filter"
-        activeKey={activeKey}
+        activeKey={activeAccordionId}
         onSelect={toggleAccordion}
       >
         {accordionData.map((accordion) => (
@@ -81,12 +105,11 @@ const FilterSection = () => {
             eventKey={`${accordion.id}`}
           >
             <Accordion.Header>
-              {' '}
               {accordion.title}
               <Icon
                 className="sag-filter__chevron-icon"
                 iconIdentifier={
-                  activeKey.includes(`${accordion.id}`)
+                  activeAccordionId.includes(`${accordion.id}`)
                     ? IconIdentifier.ChevronUp
                     : IconIdentifier.ChevronDown
                 }
@@ -98,27 +121,9 @@ const FilterSection = () => {
                   key={checkbox.id}
                   label={checkbox.label}
                   checked={checkbox.isChecked}
-                  onChange={() => {
-                    const newData = accordionData.map((a) => {
-                      if (a.id === accordion.id) {
-                        return {
-                          ...a,
-                          content: a.content.map((c) => {
-                            if (c.id === checkbox.id) {
-                              return {
-                                ...c,
-                                isChecked: !c.isChecked,
-                              };
-                            }
-                            return c;
-                          }),
-                        };
-                      }
-                      return a;
-                    });
-
-                    setAccordionData(newData);
-                  }}
+                  onChange={() =>
+                    handleCheckboxChange(accordion.id, checkbox.id)
+                  }
                 />
               ))}
             </Accordion.Body>
