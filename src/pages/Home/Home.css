@@ -5,10 +5,13 @@
   display: flex;
 }
 
-.home-page-login-button {
+.home__profile-buttons-container {
+  display: flex;
+  top: 0;
+  right: 0;
+  justify-content: flex-end;
   position: fixed;
-  top: 1.9rem;
-  right: 1.9rem;
+  padding: 1.9rem;
 }
 
 .home > .sag-button--secondary {
