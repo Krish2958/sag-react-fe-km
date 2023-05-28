@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Button, ButtonVariant, NotificationButton } from '../../components';
-import { PageWrapper } from './components';
+import { PageWrapper, SideBar } from './components';
 import { isAuthenticated } from '../../helpers';
-import './Home.css';
 import { Login } from '../Login';
+import './Home.css';
 
 export const Home = () => {
   // Hooks.
@@ -42,7 +42,10 @@ export const Home = () => {
       {/* Profile Button Components */}
       <NotificationButton />
       {renderProfileButtons()}
+
       {/* Navigation Panel Component */}
+      <SideBar />
+
       <PageWrapper>
         <Outlet />
       </PageWrapper>

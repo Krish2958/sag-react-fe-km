@@ -29,6 +29,7 @@ Ensure that:
    ```
 3. Copy the contents of the sample environment variable file(.env.sample) file 
 present in `config` folder to a new file `.env.development.local` in the same folder.
+
 4. Run the app.
    ```
    npm run start
@@ -50,3 +51,8 @@ The PR title should also contain JIRA task id in the following format:
 `[JIRA-ID]` (eg. `[SWA-47]`)
 
 Please ensure you commits contain meaningful messages.
+
+
+### Deployement
+***Development*** environment deployed at: https://sag-dev.up.railway.app\
+This is deployed using Railway services.

@@ -6,6 +6,7 @@ import LiteralClubLogo from '../../assets/images/club-logos/literal-club-logo.pn
 import ManagementClubLogo from '../../assets/images/club-logos/management-club-logo.png';
 import MathClubLogo from '../../assets/images/club-logos/math-club-logo.png';
 import PublicationClubLogo from '../../assets/images/club-logos/publication-club-logo.png';
+import SagLogo from '../../assets/images/sag-logo.png';
 
 export const LogoIdentifier = {
   ArtAndCraftClub: ArtAndCraftClubLogo,
@@ -16,4 +17,5 @@ export const LogoIdentifier = {
   ManagementClub: ManagementClubLogo,
   MathClub: MathClubLogo,
   PublicationClub: PublicationClubLogo,
+  SAG: SagLogo,
 };
