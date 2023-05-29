@@ -1,7 +1,7 @@
 .sag-filter__section {
   position: absolute;
   width: 15rem;
-  height: 37.55rem;
+  height: 39rem;
   left: 6.5rem;
   top: 6rem;
   background-color: #fff;
@@ -10,14 +10,14 @@
 }
 
 .sag-filter__header {
-  display: inline-flex;
-  gap: 4.3rem;
+  display: flex;
+  align-items: baseline;
+  gap: 4.4rem;
   margin-top: 1.5rem;
   margin-left: 1.5rem;
-  align-items: center;
   border-bottom: 0.07rem solid var(--color-secondary);
-  max-width: 100%;
-}
+  max-width: 80%;
+} 
 
 .sag-filter {
   --bs-accordion-border-radius: none;

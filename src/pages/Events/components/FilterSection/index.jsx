@@ -27,6 +27,7 @@ const FilterSection = () => {
         { id: 5, label: 'Maths Club', isChecked: false },
         { id: 6, label: 'Management Club', isChecked: false },
         { id: 7, label: 'Publication Club', isChecked: false },
+        { id: 8, label: 'Tech Bizz Club', isChecked: false },
       ],
     },
     {
@@ -42,7 +43,7 @@ const FilterSection = () => {
   ]);
 
   const [activeAccordionId, setActiveAccordionId] = useState(
-    accordionData.map((accordion) => `${accordion.id}`)
+    accordionData.map((accordion) => `${accordion.id}`),
   );
 
   const handleClearAll = () => {
@@ -59,7 +60,7 @@ const FilterSection = () => {
 
   const toggleAccordion = (id) => {
     setActiveAccordionId((prev) =>
-      prev.includes(id) ? prev.filter((key) => key !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((key) => key !== id) : [...prev, id],
     );
   };
 
@@ -113,6 +114,7 @@ const FilterSection = () => {
                     ? IconIdentifier.ChevronUp
                     : IconIdentifier.ChevronDown
                 }
+                color="black"
               />
             </Accordion.Header>
             <Accordion.Body className="sag-filter__body">
