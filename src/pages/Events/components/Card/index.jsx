@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './EventCard.css';
 import { PropTypes } from 'prop-types';
-import { Badge, Icon, IconIdentifier } from '../../../../components';
+import { Badge, Icon, IconIdentifier,Colors } from '../../../../components';
 const EventCard = ({
   title,
   category,
@@ -11,6 +11,7 @@ const EventCard = ({
   eventdate,
   month,
   pastEvent,
+  imageUrl,
 }) => {
   const [isNotifiable, setNotifiable] = useState(true);
 
@@ -19,11 +20,11 @@ const EventCard = ({
   };
 
   return (
-    <Card className="sag-card" onClick={null}>
+    <Card className="sag-event__card" onClick={null}>
       <Card.Img
-        className="sag-imgcard"
+        className="sag-event-card__image"
         variant="top"
-        src="src/assets/images/Rectangle 224.png"
+        src={imageUrl}
       />
       <Card.Body>
         <Card.Title className="sag-card__title">{title}</Card.Title>
@@ -63,16 +64,16 @@ const EventCard = ({
             imageSource={clublogo}
             iconSize="2px"
           ></Icon>
-          <Card.Text className="sag-clubname">{clubname}</Card.Text>
+          <Card.Text className="sag-event__clubname">{clubname}</Card.Text>
         </span>
         <div
-          className="sag-square"
-          style={{ backgroundColor: pastEvent ? '#DCDCDC' : '#0C3B5B' }}
+          className="sag-event__square"
+          style={{ backgroundColor: pastEvent ? Colors.Secondary : Colors.Primary }}
         >
           {
             <>
-              <h3 className="sag-date">{eventdate}</h3>
-              <h5 className="sag-month">{month}</h5>
+              <h3 className="sag-event__date">{eventdate}</h3>
+              <h5 className="sag-event__month">{month}</h5>
             </>
           }
         </div>
@@ -89,6 +90,7 @@ EventCard.propTypes = {
   eventdate: PropTypes.node.isRequired,
   month: PropTypes.node.isRequired,
   pastEvent: PropTypes.node.bool,
+  imageUrl: PropTypes.node.isRequired,
 };
 
 export default EventCard;
