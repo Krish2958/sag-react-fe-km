@@ -1,4 +1,4 @@
-.sag-card {
+.sag-event__card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
 
 }
 
-.sag-imgcard {
+.sag-event-card__imgcard {
     padding-top: 0.8rem;
     border-radius: 0.5rem;
     width: 18.1rem;
@@ -37,7 +37,7 @@
     width: 2rem;
 }
 
-.sag-clubname {
+.sag-event__clubname {
     font-size: 0.8rem;
     font-weight: bolder;
     padding-top: 0.6rem;
@@ -51,7 +51,7 @@
     left: 0.6rem;
 }
 
-.sag-square {
+.sag-event__square {
     height: 0;
     padding: 7%;
     width: 7%;
@@ -63,7 +63,7 @@
 }
 
 
-.sag-date {
+.sag-event__date {
     position: absolute;
     font-size: 1.2rem;
     font-weight: bolder;
@@ -71,7 +71,7 @@
     top: 0.26rem;
     left: 0.73rem;
 }
-.sag-month {
+.sag-event__month {
     position: absolute;
     font-size: 0.7rem;
     font-weight: bolder;
@@ -116,6 +116,6 @@
 
 }
 
-.sag-card:hover {
+.sag-event__card:hover {
     box-shadow: 0.13rem 0.26rem 0.53rem rgba(0, 0, 0, 0.25);
 }
