@@ -1,6 +1,11 @@
+/* Import font families */
+/* Alice */
+@import url(https://fonts.googleapis.com/css2?family=Alice&display=swap);
+
+/* Custom Basic Classes */
 .title {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
@@ -14,6 +19,8 @@
   text-decoration: none;
 }
 
-/* Import font families */
-/* Alice */
-@import url(https://fonts.googleapis.com/css2?family=Alice&display=swap);
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -25,7 +25,7 @@ export const SidebarMenuItem = ({
       key={title}
       icon={
         <Icon
-          iconSize={24}
+          iconSize={22}
           iconIdentifier={iconIdentifier}
           color={isActive ? Colors.White : Colors.Primary}
         />
