@@ -18,12 +18,15 @@ const IconColorMapping = {
 const Button = React.forwardRef(
   (
     {
-      isLoading = false,
       onClick,
+      children,
+      isLoading = false,
       variant = ButtonVariant.Primary,
       className = '',
       leftIconIdentifier = null,
-      children,
+      leftIconProps = null,
+      rightIconIdentifier = null,
+      rightIconProps = null,
       fontColor = null,
       ...rest
     },
@@ -57,8 +60,26 @@ const Button = React.forwardRef(
               className="sag-button__icon--left"
               color={fontColor || IconColorMapping[variant]}
               iconIdentifier={leftIconIdentifier}
+              {...leftIconProps}
             />
           )}
+        </div>
+      );
+    };
+
+    const renderRightIcon = () => {
+      if (isNull(rightIconIdentifier)) {
+        return;
+      }
+
+      return (
+        <div className="sag-button__icon__container--right">
+          <Icon
+            className="sag-button__icon--left"
+            color={fontColor || IconColorMapping[variant]}
+            iconIdentifier={rightIconIdentifier}
+            {...rightIconProps}
+          />
         </div>
       );
     };
@@ -75,6 +96,8 @@ const Button = React.forwardRef(
         {renderLeftIcon()}
 
         {Children.toArray(children)}
+
+        {renderRightIcon()}
       </BootstrapButton>
     );
   },
@@ -83,12 +106,21 @@ const Button = React.forwardRef(
 Button.displayName = 'Button';
 
 Button.propTypes = {
-  isLoading: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  isLoading: PropTypes.bool,
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   className: PropTypes.string,
   leftIconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
-  children: PropTypes.node.isRequired,
+  leftIconProps: PropTypes.shape({
+    ...Icon.propTypes,
+    iconIdentifier: PropTypes.string,
+  }),
+  rightIconIdentifier: PropTypes.oneOf(Object.values(IconIdentifier)),
+  rightIconProps: PropTypes.shape({
+    ...Icon.propTypes,
+    iconIdentifier: PropTypes.string,
+  }),
   fontColor: PropTypes.oneOf(Object.values(Colors)),
 };
 
