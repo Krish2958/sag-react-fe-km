@@ -1,4 +1,4 @@
-import React, { Children, useEffect } from 'react';
+import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { Button as BootstrapButton, Spinner } from 'react-bootstrap';
 import './Button.css';
@@ -15,64 +15,72 @@ const IconColorMapping = {
   [ButtonVariant.Secondary]: Colors.Primary,
 };
 
-const Button = ({
-  isLoading = false,
-  onClick,
-  variant = ButtonVariant.Primary,
-  className = '',
-  leftIconIdentifier = null,
-  children,
-  fontColor = null,
-  ...rest
-}) => {
-  const classNames = [`sag-button--${variant}`, className];
+const Button = React.forwardRef(
+  (
+    {
+      isLoading = false,
+      onClick,
+      variant = ButtonVariant.Primary,
+      className = '',
+      leftIconIdentifier = null,
+      children,
+      fontColor = null,
+      ...rest
+    },
+    ref,
+  ) => {
+    const classNames = [`sag-button--${variant}`, className];
 
-  if (isLoading) {
-    classNames.push('sag-button--loading');
-  }
-
-  // Renders.
-  const renderLeftIcon = () => {
-    if (!isLoading && isNull(leftIconIdentifier)) {
-      return;
+    if (isLoading) {
+      classNames.push('sag-button--loading');
     }
 
+    // Renders.
+    const renderLeftIcon = () => {
+      if (!isLoading && isNull(leftIconIdentifier)) {
+        return;
+      }
+
+      return (
+        <div className="sag-button__icon__container--left">
+          {isLoading ? (
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+              className="sag-button__icon__spinner"
+            />
+          ) : (
+            <Icon
+              className="sag-button__icon--left"
+              color={fontColor || IconColorMapping[variant]}
+              iconIdentifier={leftIconIdentifier}
+            />
+          )}
+        </div>
+      );
+    };
+
     return (
-      <div className="sag-button__icon__container--left">
-        {isLoading ? (
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-            className="sag-button__icon__spinner"
-          />
-        ) : (
-          <Icon
-            className="sag-button__icon--left"
-            color={fontColor || IconColorMapping[variant]}
-            iconIdentifier={leftIconIdentifier}
-          />
-        )}
-      </div>
+      <BootstrapButton
+        ref={ref}
+        variant="primary"
+        className={classNames.join(' ')}
+        onClick={onClick}
+        style={{ color: fontColor }}
+        {...rest}
+      >
+        {renderLeftIcon()}
+
+        {Children.toArray(children)}
+      </BootstrapButton>
     );
-  };
+  },
+);
 
-  return (
-    <BootstrapButton
-      variant="primary"
-      className={classNames.join(' ')}
-      onClick={onClick}
-      style={{ color: fontColor }}
-      {...rest}
-    >
-      {renderLeftIcon()}
-
-      {Children.toArray(children)}
-    </BootstrapButton>
-  );
-};
+Button.displayName = 'Button';
 
 Button.propTypes = {
   isLoading: PropTypes.bool,
