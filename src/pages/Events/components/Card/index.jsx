@@ -2,7 +2,14 @@ import { React, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './EventCard.css';
 import { PropTypes } from 'prop-types';
-import { Badge, Icon, IconIdentifier,Colors } from '../../../../components';
+import {
+  Badge,
+  Icon,
+  IconIdentifier,
+  Colors,
+  LogoIdentifier,
+  Logo,
+} from '../../../../components';
 const EventCard = ({
   title,
   category,
@@ -20,33 +27,33 @@ const EventCard = ({
   };
 
   return (
-    <Card className="sag-event__card" onClick={null}>
+    <Card className="sag-event-card" onClick={null}>
       <Card.Img
         className="sag-event-card__image"
         variant="top"
         src={imageUrl}
       />
       <Card.Body>
-        <Card.Title className="sag-card__title">{title}</Card.Title>
-        <div className="sag-notification" onClick={handleToggle}>
+        <Card.Title className="sag-event-card__title">{title}</Card.Title>
+        <div className="sag-event-card__notification" onClick={handleToggle}>
           {pastEvent ? (
             <Icon
-              className="sag-card__gallery"
+              className="sag-event-card__gallery"
               iconIdentifier={IconIdentifier.Gallery}
             />
           ) : isNotifiable ? (
             <Icon
-              className="sag-card__bell"
+              className="sag-event-card__bell"
               iconIdentifier={IconIdentifier.Bell}
             />
           ) : (
             <Icon
-              className="sag-card__belloff"
+              className="sag-event-card__belloff"
               iconIdentifier={IconIdentifier.BellOff}
             />
           )}
         </div>
-        <div className="sag-card__badge">
+        <div className="sag-event-card__badge">
           <Badge
             iconIdentifier={IconIdentifier.Trophy}
             color="#F03FA9"
@@ -58,22 +65,26 @@ const EventCard = ({
             text={category[1]}
           />
         </div>
-        <span className="sag-card__club">
-          <Icon
-            className="sag-logoclub"
-            imageSource={clublogo}
+        <span className="sag-event-card__club">
+          <Logo
+            className="sag-event-card__club__logo"
+            logoIdentifier={clublogo}
             iconSize="2px"
-          ></Icon>
-          <Card.Text className="sag-event__clubname">{clubname}</Card.Text>
+          ></Logo>
+          <Card.Text className="sag-event-card__club__name">
+            {clubname}
+          </Card.Text>
         </span>
         <div
-          className="sag-event__square"
-          style={{ backgroundColor: pastEvent ? Colors.Secondary : Colors.Primary }}
+          className="sag-event-card__date__box"
+          style={{
+            backgroundColor: pastEvent ? Colors.Secondary : Colors.Primary,
+          }}
         >
           {
             <>
-              <h3 className="sag-event__date">{eventdate}</h3>
-              <h5 className="sag-event__month">{month}</h5>
+              <h3 className="sag-event-card__date">{eventdate}</h3>
+              <h5 className="sag-event-card__month">{month}</h5>
             </>
           }
         </div>
@@ -86,7 +97,7 @@ EventCard.propTypes = {
   title: PropTypes.node.isRequired,
   category: PropTypes.node,
   clubname: PropTypes.node.isRequired,
-  clublogo: PropTypes.node.isRequired,
+  clublogo: PropTypes.oneOf(Object.values(LogoIdentifier)),
   eventdate: PropTypes.node.isRequired,
   month: PropTypes.node.isRequired,
   pastEvent: PropTypes.node.bool,

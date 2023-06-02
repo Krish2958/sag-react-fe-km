@@ -1,4 +1,4 @@
-.sag-event__card {
+.sag-event-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
     cursor:pointer;
 }
 
-.sag-card__badge {
+.sag-event-card__badge {
     display: inline-flex;
     position:absolute;
     top: 12.2rem;
@@ -18,14 +18,14 @@
 
 }
 
-.sag-event-card__imgcard {
+.sag-event-card__image {
     padding-top: 0.8rem;
     border-radius: 0.5rem;
     width: 18.1rem;
     height: 10.15rem;
 }
 
-.sag-card__title {
+.sag-event-card__title {
     position: absolute;
     left: 0.8rem;
     font-size: 1.1rem;
@@ -33,25 +33,25 @@
     top: 10.75rem;
 }
 
-.sag-logoclub {
+.sag-event-card__club__logo {
     width: 2rem;
 }
 
-.sag-event__clubname {
+.sag-event-card__club__name {
     font-size: 0.8rem;
     font-weight: bolder;
     padding-top: 0.6rem;
     line-height: 0.8rem;
     padding-left: 0.18rem;
 }
-.sag-card__club {
+.sag-event-card__club {
     display: inline-flex;
     position: absolute;
     bottom: 0.4rem;
     left: 0.6rem;
 }
 
-.sag-event__square {
+.sag-event-card__date__box {
     height: 0;
     padding: 7%;
     width: 7%;
@@ -63,7 +63,7 @@
 }
 
 
-.sag-event__date {
+.sag-event-card__date {
     position: absolute;
     font-size: 1.2rem;
     font-weight: bolder;
@@ -71,7 +71,7 @@
     top: 0.26rem;
     left: 0.73rem;
 }
-.sag-event__month {
+.sag-event-card__month {
     position: absolute;
     font-size: 0.7rem;
     font-weight: bolder;
@@ -80,7 +80,7 @@
     left: 0.8rem;
 }
 
-.sag-notification {
+.sag-event-card__notification {
     background-color: white;
     cursor: pointer;
     position: absolute;
@@ -93,29 +93,29 @@
     box-shadow: 0.13rem 0.26rem 0.53rem rgba(0, 0, 0, 0.25);
 }
 
-.sag-notification:active {
+.sag-event-card__notification:active {
  
   transform: translateY(0.13rem);
 }
-.sag-card__bell {
+.sag-event-card__bell {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
-.sag-card__gallery {
+.sag-event-card__gallery {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
-.sag-card__belloff {
+.sag-event-card__belloff {
     position: absolute;
     top: 0.73rem;
     left: 0.8rem;
 
 }
 
-.sag-event__card:hover {
+.sag-event-card:hover {
     box-shadow: 0.13rem 0.26rem 0.53rem rgba(0, 0, 0, 0.25);
 }
