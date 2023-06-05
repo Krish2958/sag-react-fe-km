@@ -60,13 +60,13 @@ export const NotificationButton = ({ notificationsList = [] }) => {
         className="notification-button"
         variant={ButtonVariant.Secondary}
       >
-        <Icon iconSize={24} iconIdentifier={IconIdentifier.Bell} />
+        <Icon iconSize={22} iconIdentifier={IconIdentifier.Bell} />
       </Button>
 
       <Overlay
         show={showNotificationOverlay}
         target={notificationButtonRef.current}
-        placement="bottom"
+        placement="bottom-end"
       >
         <div className="notification-button__overlay">
           {renderNotificationsList()}
