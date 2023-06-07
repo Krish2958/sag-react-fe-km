@@ -13,6 +13,11 @@ export const toStrictTitleCase = (text, separator = ' ') => {
 
   const newText = text.split(separator);
   return newText
-    .map((val) => val[0].toUpperCase() + val.slice(1).toLowerCase())
+    .map((val) => {
+      if (isEmpty(val)) {
+        return val;
+      }
+      return val[0].toUpperCase() + val.slice(1).toLowerCase();
+    })
     .join(' ');
 };
