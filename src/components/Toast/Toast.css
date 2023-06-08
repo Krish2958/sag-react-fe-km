@@ -11,8 +11,5 @@
   padding: 0;
   margin: 0;
   height: 100%;
-}
-
-.sag-toast__close-icon {
-  padding-left: 1.25rem; 
+  padding-left: 0.8rem; 
 }
