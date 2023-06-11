@@ -8,7 +8,7 @@
 }
 
 .sag-toast__body {
-  padding: 0;
+  padding: 0 0 0 0.6rem;
   margin: 0;
   height: 100%;
 }
