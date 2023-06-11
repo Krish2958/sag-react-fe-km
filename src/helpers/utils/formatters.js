@@ -21,3 +21,10 @@ export const toStrictTitleCase = (text, separator = ' ') => {
     })
     .join(' ');
 };
+
+export const getFormattedDate = (dateTimeString) => {
+  const dateTime = new Date(dateTimeString);
+  const month = dateTime.toLocaleString('en-US', { month: 'short' });
+  const date = dateTime.getDate();
+  return { month, date };
+};
