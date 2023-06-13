@@ -9,10 +9,14 @@ import { Colors } from '../helpers';
 export const ButtonVariant = {
   Primary: 'primary',
   Secondary: 'secondary',
+  OutlinePrimary: 'outline-primary',
+  OutlineSecondary: 'outline-secondary',
 };
 const IconColorMapping = {
   [ButtonVariant.Primary]: Colors.White,
   [ButtonVariant.Secondary]: Colors.Primary,
+  [ButtonVariant.OutlineSecondary]: Colors.White,
+  [ButtonVariant.OutlinePrimary]: Colors.Primary,
 };
 
 const Button = React.forwardRef(
