@@ -2,7 +2,7 @@ import { Colors } from '../../../../components';
 
 export const generateProfileImage = (userName) => {
   const imageUrl = new URL('https://ui-avatars.com/api/');
-  // Here '%2B' is encoded form of whitespace. Ref : https://stackoverflow.com/a/1634293
+  // Here '%2B' is encoded form of whitespace. Ref: https://stackoverflow.com/a/1634293 .
   imageUrl.searchParams.append('name', userName.replace('%2B', '+'));
   imageUrl.searchParams.append('background', 'random');
   imageUrl.searchParams.append('color', Colors.White);
