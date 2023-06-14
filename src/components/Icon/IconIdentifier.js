@@ -22,6 +22,7 @@ export const IconIdentifier = {
   LinkedIn: 'linkedin',
   Logout: 'logout',
   Mail: 'mail',
+  Newspaper: 'newspaper',
   Profile: 'profile',
   Soccer: 'soccer',
   Star: 'star',

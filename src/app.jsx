@@ -11,6 +11,7 @@ import {
   About,
   Clubs,
   Sports,
+  Newsletter,
 } from './pages';
 import { GlobalContext } from './context';
 
@@ -40,6 +41,7 @@ const App = () => {
                 <Route path={Clubs.route} element={<Clubs />} />
                 <Route path={Sports.route} element={<Sports />} />
                 <Route path={About.route} element={<About />} />
+                <Route path={Newsletter.route} element={<Newsletter />} />
               </Route>
 
               <Route element={<ProtectedRoute />}>

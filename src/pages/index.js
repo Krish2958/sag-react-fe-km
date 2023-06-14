@@ -5,3 +5,4 @@ export * from './About';
 export * from './Clubs';
 export * from './Sports';
 export * from './Events';
+export * from './Newsletter';

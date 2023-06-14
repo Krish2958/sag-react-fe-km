@@ -9,7 +9,7 @@ import {
   Logo,
   LogoIdentifier,
 } from '../../../../components';
-import { Events, Clubs, Sports, About } from '../../../../pages';
+import { Events, Clubs, Sports, About, Newsletter } from '../../../../pages';
 import { menuItemsTitle, sidebarMenuStyles } from './constants';
 import { SidebarMenuItem } from './SidebarMenuItem';
 import './Sidebar.css';
@@ -40,6 +40,11 @@ export const SideBar = () => {
       title: menuItemsTitle.About,
       iconIdentifier: IconIdentifier.Info,
       route: About.route,
+    },
+    {
+      title: menuItemsTitle.Newsletter,
+      iconIdentifier: IconIdentifier.Newspaper,
+      route: Newsletter.route,
     },
   ];
 

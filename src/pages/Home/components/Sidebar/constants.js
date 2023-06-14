@@ -5,6 +5,7 @@ export const menuItemsTitle = {
   Clubs: 'Clubs',
   Sports: 'Sports',
   About: 'About',
+  Newsletter: 'Newsletters',
 };
 
 export const sidebarMenuStyles = {
